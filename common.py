@@ -8,8 +8,8 @@ import os
 # --- Config
 # ---------------------------------------------------------------------
 
-ROOT_FOLDER = './'  # set where is the root folder of this project, relative of this file
-DATA_FOLDER = '../data/'  # set where is the data folder (storing e.g. outputs from scraping), relative of this file
+ROOT_FOLDER = '/../'  # set where is the root folder of this project, relative of this file
+DATA_FOLDER = '/../data/'  # set where is the data folder (storing e.g. outputs from scraping), relative of this file
 
 
 # ---------------------------------------------------------------------
