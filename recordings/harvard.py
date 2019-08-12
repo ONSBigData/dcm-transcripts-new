@@ -27,6 +27,9 @@ class HarvardAudioSpider(scrapy.Spider):
         fromurl = response.url[:response.url.rindex('/')]
         links = response.xpath("//table[@bordercolor='#C0C0C0']")[0].xpath('.//a/@href').extract()
         for l in links:
+            if 'OSR_us_000_0058_8k.wav' in l:
+                # this one is broken audio file
+                continue
             filename = l[l.rindex('/') + 1:]
             filepath = f'{DIR}/{filename}'
             print(f'Downloading {l} to {filepath}')
@@ -65,9 +68,18 @@ def load():
     with open(TRANSCRIPTS_FPATH, 'rb') as f:
         texts = pickle.load(f)
 
-    return texts
+    wavs = [f'{DIR}/{f}' for f in os.listdir(DIR) if f.endswith('.wav')]
+    uk_wavs  = [f for f in wavs if '_uk_' in f]
+    us_wavs = [f for f in wavs if '_us_' in f]
+
+    return {
+        'transcripts': texts,
+        'audio': {
+            'uk': uk_wavs,
+            'us': us_wavs
+        }
+    }
 
 
 if __name__ == '__main__':
-    # scrape_transcripts()
-    print(load())
+    scrape_audio()

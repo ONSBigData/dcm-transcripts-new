@@ -10,6 +10,13 @@ scrapy = "*"
 beautifulsoup4 = "*"
 jupyter = "*"
 requests = "*"
+speechrecognition = "*"
+jupyterlab = "*"
+pip = "*"
+setuptools = "*"
+wheel = "*"
+pocketsphinx = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.6"
