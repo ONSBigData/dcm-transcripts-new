@@ -1,0 +1,25 @@
+scrapy
+beautifulsoup4
+jupyter
+requests
+speechrecognition
+jupyterlab
+pip
+setuptools
+wheel
+pocketsphinx
+pandas
+tensorflow
+# tensorflow-gpu
+inaSpeechSegmenter
+librosa
+numpy
+matplotlib
+scipy
+sklearn
+hmmlearn
+simplejson
+eyed3
+pydub
+
+# https://github.com/tyiannak/pyAudioAnalysis - manual (clone, cd into and `pip install -e .`)

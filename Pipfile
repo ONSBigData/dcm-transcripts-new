@@ -6,17 +6,26 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-scrapy = "*"
 beautifulsoup4 = "*"
 jupyter = "*"
 requests = "*"
-speechrecognition = "*"
 jupyterlab = "*"
-pip = "*"
-setuptools = "*"
-wheel = "*"
 pocketsphinx = "*"
 pandas = "*"
+tensorflow = "*"
+tensorflow-gpu = "*"
+librosa = "*"
+numpy = "*"
+matplotlib = "*"
+scipy = "*"
+sklearn = "*"
+hmmlearn = "*"
+simplejson = "*"
+pydub = "*"
+Scrapy = "*"
+SpeechRecognition = "*"
+inaSpeechSegmenter = "*"
+eyeD3 = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

@@ -1,4 +1,4 @@
 .idea
-wav
+*.wav
 __pycache__
 .ipynb_checkpoints
