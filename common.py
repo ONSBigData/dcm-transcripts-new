@@ -13,6 +13,17 @@ DATA_FOLDER = '/../data/'  # set where is the data folder (storing e.g. outputs 
 
 
 # ---------------------------------------------------------------------
+# --- Constants
+# ---------------------------------------------------------------------
+
+COL_SPEAKER = 'speaker'
+COL_START = 'from'
+COL_END = 'end'
+COL_TEXT = 'text'
+COLS_STRUC_TRANSCRIPT = [COL_SPEAKER, COL_START, COL_END, COL_TEXT]
+
+
+# ---------------------------------------------------------------------
 # --- Commonly used functions
 # ---------------------------------------------------------------------
 

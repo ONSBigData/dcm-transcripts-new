@@ -36,7 +36,10 @@ def find_transcript(audio_fpath, all_transcripts):
 
 
 def make_mappings():
-    text_fpaths = [f'{hv_common.DIR}/{f}' for f in os.listdir(hv_common.DIR) if re.search(r'transcript_\d.txt', f)]
+    text_fpaths = [
+        f'{hv_common.DIR}/{f}'
+        for f in os.listdir(hv_common.DIR) if re.search(r'transcript_\d.txt', f)
+    ]
 
     all_transcripts = {}
     for fpath in text_fpaths:
@@ -44,11 +47,18 @@ def make_mappings():
             lines = [l.strip() for l in f.readlines()]
             all_transcripts[fpath] = ' '.join(lines)
 
-    audio_fpaths = [f'{hv_common.DIR}/{f}' for f in os.listdir(hv_common.DIR) if f.endswith('.wav')]
+    audio_fpaths = [
+        f'{hv_common.DIR}/{f}'
+        for f in os.listdir(hv_common.DIR) if f.endswith('.wav')
+    ]
 
-    results = [find_transcript(audio_fpath, all_transcripts) for audio_fpath in audio_fpaths]
+    results = [
+        find_transcript(audio_fpath, all_transcripts)
+        for audio_fpath in audio_fpaths
+    ]
 
-    # only if there's one transcript significantly better than others we will take it as the correct one
+    # only if there's one transcript significantly better than others we
+    # will take it as the correct one
     THRESHOLD = 1.7
     mapping = {
         r['audio_fpath']: (r['transcript_fpath'] if r['distance']*THRESHOLD < r['next_distance'] else None)
@@ -59,7 +69,12 @@ def make_mappings():
 
 
 def create_matched_pairs():
-    mapping = pd.read_csv(hv_common.MAPPING_FPATH, header=None, names=['audio_fpath', 'transcript_fpath'])
+    mapping = pd.read_csv(
+        hv_common.MAPPING_FPATH,
+        header=None,
+        names=['audio_fpath', 'transcript_fpath']
+    )
+
     for r in mapping.dropna().iterrows():
         fname = os.path.basename(r[1]['audio_fpath']).replace('.wav', '')
         shutil.copyfile(r[1]['audio_fpath'], f'{hv_common.DIR_MATCHED}/{fname}.wav')
