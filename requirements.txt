@@ -21,5 +21,6 @@ hmmlearn
 simplejson
 eyed3
 pydub
+google-cloud-speech
 
 # https://github.com/tyiannak/pyAudioAnalysis - manual (clone, cd into and `pip install -e .`)

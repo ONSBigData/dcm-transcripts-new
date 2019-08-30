@@ -2,3 +2,5 @@
 *.wav
 __pycache__
 .ipynb_checkpoints
+dcm-iw-transcripts*.json
+Pipenv

@@ -1,3 +1,7 @@
+"""
+Taken from https://github.com/tyiannak/pyAudioAnalysis/tree/master/pyAudioAnalysis/data
+"""
+
 from common import *
 from recordings.recording import *
 import pandas as pd
@@ -7,24 +11,19 @@ import os
 DIR = from_data_root('recordings/pyaudio_examples/')
 
 
-def load_all():
-    fnames = [
+def get_fnames():
+    return [
         f.replace('.wav', '')
         for f in os.listdir(DIR) if f.endswith('.wav')
     ]
 
-    recordings = [load(fname) for fname in fnames]
 
-    return recordings
+def prep():
+    for fname in get_fnames():
+        st_fpath = f'{DIR}/{fname}_struc_trancript.csv'
+        if os.path.exists(st_fpath):
+            continue
 
-
-def load(fname):
-    r = Recording()
-
-    r.audio_fpath = f'{DIR}/{fname}.wav'
-
-    st_fpath = f'{DIR}/{fname}_st.csv'
-    if not os.path.exists(st_fpath):
         with open(f'{DIR}/{fname}.segments', 'r') as f:
             lines = [l for l in f.readlines() if l.strip() != '']
             segments = [{
@@ -36,7 +35,17 @@ def load(fname):
             df_st[COL_TEXT] = None
             df_st.to_csv(st_fpath)
 
-    df_st = pd.read_csv(st_fpath, index_col=0)
+
+def load_all():
+    return [load(fname) for fname in get_fnames()]
+
+
+def load(fname):
+    r = Recording()
+
+    r.audio_fpath = f'{DIR}/{fname}.wav'
+
+    df_st = pd.read_csv(f'{DIR}/{fname}_struc_trancript.csv', index_col=0)
     r.structured_transcript = df_st
 
     r.no_speakers = df_st[COL_SPEAKER].nunique()
@@ -45,4 +54,5 @@ def load(fname):
 
 
 if __name__ == '__main__':
+    prep()
     print(load_all())

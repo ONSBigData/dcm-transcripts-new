@@ -25,7 +25,7 @@ class HarvardAudioSpider(scrapy.Spider):
                 # this one is broken audio file
                 continue
             filename = l[l.rindex('/') + 1:]
-            filepath = f'{harvard_common.DIR}/{filename}'
+            filepath = f'{harvard_common.DIR_PREP}/{filename}'
             print(f'Downloading {l} to {filepath}')
             urllib.request.urlretrieve(f'{fromurl}/{l}', filepath)
 

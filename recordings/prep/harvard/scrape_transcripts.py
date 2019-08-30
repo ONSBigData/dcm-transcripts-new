@@ -13,7 +13,7 @@ def scrape_transcripts():
     texts = [[text for text in l.xpath('li/text()')] for l in lists]
 
     for i, t in enumerate(texts):
-        with open(f'{hv_common.DIR}/transcript_{i}.txt', 'w') as f:
+        with open(f'{hv_common.DIR_PREP}/transcript_{i}.txt', 'w') as f:
             f.writelines([l + '\n' for l in t])
 
     return texts

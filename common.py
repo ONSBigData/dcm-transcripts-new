@@ -9,6 +9,7 @@ import os
 # ---------------------------------------------------------------------
 
 ROOT_FOLDER = '/../'  # set where is the root folder of this project, relative of this file
+SRC_FOLDER = '/'  # set where is the source root folder of this project, relative of this file
 DATA_FOLDER = '/../data/'  # set where is the data folder (storing e.g. outputs from scraping), relative of this file
 
 
@@ -57,6 +58,13 @@ def from_root(path, create_if_needed=False):
         create_directories_if_necessary(result_path)
 
     return result_path
+
+
+def from_src_root(path, create_if_needed=False):
+    """
+    Returns path with project root prepended
+    """
+    return from_root(f'src/{path}', create_if_needed=create_if_needed)
 
 
 def from_data_root(path, create_if_needed=False):
