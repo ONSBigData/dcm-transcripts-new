@@ -8,7 +8,7 @@ import pandas as pd
 import recordings.prep.segmenting_helper as sh
 
 
-FPATH = from_data_root('recordings/america_nepal/')
+FPATH = from_data_root('recordings/america_nepal/')[:-1]
 TRANSCRIPT_FPATH = f'{FPATH}/transcript.txt'
 STRUC_TRANSCRIPT_FPATH = f'{FPATH}/struc_trancript.csv'
 

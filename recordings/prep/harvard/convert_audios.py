@@ -1,6 +1,6 @@
 from common import *
 import recordings.prep.harvard.hv_common as hv_common
-import conversions
+from support import conversions
 
 
 def convert_audios():

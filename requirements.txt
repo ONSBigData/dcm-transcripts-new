@@ -23,5 +23,6 @@ eyed3
 pydub
 google-cloud-speech
 boto3
+aws-shell
 
 # https://github.com/tyiannak/pyAudioAnalysis - manual (clone, cd into and `pip install -e .`)

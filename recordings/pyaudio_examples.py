@@ -8,7 +8,7 @@ import pandas as pd
 import os
 
 
-DIR = from_data_root('recordings/pyaudio_examples/')
+DIR = from_data_root('recordings/pyaudio_examples/')[:-1]
 
 
 def get_fnames():

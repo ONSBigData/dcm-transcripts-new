@@ -1,5 +1,5 @@
 from common import *
-from editdist import levenshtein
+from support.editdist import levenshtein
 import speech_recognition as sr
 import recordings.prep.harvard.hv_common as hv_common
 import shutil

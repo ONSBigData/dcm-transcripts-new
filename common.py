@@ -3,6 +3,8 @@ Most commonly used methods/constants, used across the whole project
 """
 
 import os
+import time
+import logging
 
 # ---------------------------------------------------------------------
 # --- Config
@@ -12,7 +14,7 @@ ROOT_FOLDER = '/../'  # set where is the root folder of this project, relative o
 SRC_FOLDER = '/'  # set where is the source root folder of this project, relative of this file
 DATA_FOLDER = '/../data/'  # set where is the data folder (storing e.g. outputs from scraping), relative of this file
 
-DEF_AUDIO_SUFFIX = '.wav'
+DEF_AUDIO_SUFFIX = '.mp3'
 
 
 # ---------------------------------------------------------------------
@@ -29,6 +31,14 @@ COLS_STRUC_TRANSCRIPT = [COL_SPEAKER, COL_START, COL_END, COL_TEXT]
 # ---------------------------------------------------------------------
 # --- Commonly used functions
 # ---------------------------------------------------------------------
+
+
+def setup_logging():
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(levelname)s: %(asctime)s: %(message)s'
+    )
+
 
 def create_directories_if_necessary(path):
     """
@@ -80,5 +90,31 @@ def from_data_root(path, create_if_needed=False):
         create_directories_if_necessary(result_path)
 
     return result_path
+
+# ---------------------------------------------------------------------
+# --- Timing of code
+# ---------------------------------------------------------------------
+
+
+__start_times = {}
+
+
+def start_timing(id, msg=''):
+    __start_times[id] = time.time()
+
+    print()
+    print('v'*20)
+    print(f'START of timing {id}: {msg}')
+
+
+def end_timing(id, msg=''):
+    start_time = __start_times[id]
+    duration = time.time() - start_time
+    minutes = int(duration // 60)
+    secs = duration % 60
+
+    print(f'END of timing {id}: {msg} ({minutes}m, {secs:.1f}s)')
+    print('^'*20)
+    print()
 
 
