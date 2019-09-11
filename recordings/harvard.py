@@ -5,6 +5,7 @@ Based on http://www.voiptroubleshooter.com/open_speech
 from common import *
 from recordings.recording import *
 import recordings.prep.harvard.hv_common as hv_common
+import recordings.prep.harvard.convert_audios as convert_audios
 import recordings.prep.harvard.scrape_audio as scrape_audio
 import recordings.prep.harvard.scrape_transcripts as scrape_transcripts
 import recordings.prep.harvard.match_audio2transcripts as match_audio2tr
@@ -17,6 +18,9 @@ def prep():
 
     print('scraping audio files...')
     scrape_audio.scrape_audio()
+
+    print(f'convert audios to {DEF_AUDIO_SUFFIX}')
+    convert_audios.convert_audios()
 
     print('scraping transcripts...')
     scrape_transcripts.scrape_transcripts()
@@ -48,15 +52,15 @@ def prep_structured_transcripts():
 
 def get_fnames():
     return [
-        f.replace('.wav', '')
-        for f in os.listdir(hv_common.DIR) if f.endswith('.wav')
+        f.replace(DEF_AUDIO_SUFFIX, '')
+        for f in os.listdir(hv_common.DIR) if f.endswith(DEF_AUDIO_SUFFIX)
     ]
 
 
 def load(fname):
     r = Recording()
 
-    r.audio_fpath = f'{hv_common.DIR}/{fname}.wav'
+    r.audio_fpath = f'{hv_common.DIR}/{fname}{DEF_AUDIO_SUFFIX}'
     r.transcript_fpath = f'{hv_common.DIR}/{fname}.txt'
 
     r.no_speakers = 1
@@ -71,8 +75,8 @@ def load(fname):
 
 def load_all():
     fnames = [
-        f.replace('.wav', '')
-        for f in os.listdir(hv_common.DIR) if f.endswith('.wav')
+        f.replace(DEF_AUDIO_SUFFIX, '')
+        for f in os.listdir(hv_common.DIR) if f.endswith(DEF_AUDIO_SUFFIX)
     ]
 
     recordings = [load(fname) for fname in fnames]

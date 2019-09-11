@@ -24,7 +24,7 @@ def prep():
 def load():
     r = Recording()
 
-    r.audio_fpath = f'{FPATH}/audio.wav'
+    r.audio_fpath = f'{FPATH}/audio{DEF_AUDIO_SUFFIX}'
     r.transcript_fpath = TRANSCRIPT_FPATH
 
     df_st = pd.read_csv(STRUC_TRANSCRIPT_FPATH, index_col=0)
