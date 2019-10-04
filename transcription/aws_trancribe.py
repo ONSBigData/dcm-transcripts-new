@@ -5,76 +5,152 @@ import time
 from common import *
 import json
 import requests
+import pprint
 
 BUCKET = 'dcm-automatic-transcription'
-TRANSCRIPTS_DIR = from_data_root('aws-transcripts/', create_if_needed=True)[:-1]
+AWS_TRANSCRIPTS_DIR = from_data_root(
+    'aws-transcripts/', create_if_needed=True
+)[:-1]
+
+# ---------------------------------------------------------------------
+# --- Public
+# ---------------------------------------------------------------------
 
 
-def upload_file_to_bucket(local_fpath, bucket_fpath):
+def transcribe(audio_fpath, language_code, prefix='noprefix'):
+    """
+    :param language_code: e.g. 'en-US', or 'en-GB'
+    """
+
+    # get the job name and location where we'll upload the file in the bucket
+    job_name = _get_job_name(prefix, audio_fpath)
+    bucket_fpath = _get_bucket_fpath(prefix, audio_fpath)
+
+    def _print(msg):
+        print(f'{job_name}: {msg}')
+
+    _print(f'\nUsing job name "{job_name}" and bucket fpath "{bucket_fpath}"')
+
+    # upload the file to S3 bucket
+    _print(
+        f'\nUploading "{audio_fpath}" to "{bucket_fpath}" '
+        f'in "{BUCKET}" bucket'
+    )
+    _upload_file_to_bucket(audio_fpath, bucket_fpath)
+
+    # get the transcribing client
+    transcribe_client = boto3.client('transcribe')
+
+    # delete job with the same name, if exists
+    _delete_existing_transcribe_job(transcribe_client, job_name)
+
+    # start the transcription
+    _print(f'\nStarting the transcription job "{job_name}"')
+    response = transcribe_client.start_transcription_job(
+        TranscriptionJobName=job_name,
+        Media={'MediaFileUri': f's3://{BUCKET}/{bucket_fpath}'},
+        MediaFormat=DEF_AUDIO_SUFFIX[1:],
+        LanguageCode=language_code
+    )
+    _print(f'\nTranscription started with response: {response}')
+
+    # wait till it finishes
+    before = time.time()
+    status = _wait_for_transcribe_to_finish(transcribe_client, job_name)
+    after = time.time()
+    _print(f'Done transcribing ({after - before:.2f}s)')
+
+    transcript_json = _get_transcript_from_status(status)
+    _save_transcript(transcript_json, audio_fpath)
+
+    return transcript_json
+
+
+# ---------------------------------------------------------------------
+# --- Implementation
+# ---------------------------------------------------------------------
+
+
+def _get_fname(audio_fpath):
+    fname = os.path.basename(audio_fpath)
+    fname = '.'.join(fname.split('.')[:-1])
+
+    return fname
+
+
+def _get_job_name(prefix, audio_fpath):
+    fname = _get_fname(audio_fpath)
+    job_name = f'tr--{prefix}--{fname.replace(" ", "_")}'
+
+    return job_name
+
+
+def _get_bucket_fpath(prefix, audio_fpath):
+    return f'{prefix}--{_get_fname(audio_fpath)}'
+
+
+def _upload_file_to_bucket(local_fpath, bucket_fpath):
     s3_client = boto3.client('s3')
     s3_client.upload_file(local_fpath, BUCKET, bucket_fpath)
 
 
-def transcribe(audio_fpath, language_code):
-    """
-    :param language_code: e.g. 'en-US', or 'en-GB'
-    """
-    audio_rel_fpath = audio_fpath.split('recordings/')[1]
-    job_name = f'transcribe-{audio_rel_fpath.replace("/", "__")}'
-    print(f'Using job name "{job_name}" and bucket fpath "{audio_rel_fpath}"')
+def _get_transcript_from_status(status):
+    # TODO - this URL can be accessed publicly, find out if more secure way
+    url = status['TranscriptionJob']['Transcript']['TranscriptFileUri']
+    response = requests.get(url)
+    transcript_json = response.json()
 
-    print(f'Uploading "{audio_fpath}" to "{audio_rel_fpath}" in "{BUCKET}" bucket')
-    upload_file_to_bucket(audio_fpath, audio_rel_fpath)
-    print('Done')
+    return transcript_json
 
-    transcribe = boto3.client('transcribe')
 
-    # delete job with the same name, if exists
-    tr_jobs = transcribe.list_transcription_jobs()['TranscriptionJobSummaries']
-    if job_name in [job['TranscriptionJobName'] for job in tr_jobs]:
-        print(f'Job with namme {job_name} already exists, deleting the old one...')
-        transcribe.delete_transcription_job(job_name)
+def _save_transcript(transcript_json, audio_fpath):
+    audio_rel_fpath = _get_fname(audio_fpath)
+    json_ending = audio_rel_fpath.replace(DEF_AUDIO_SUFFIX, ".json")
+    transcript_fpath = f'{AWS_TRANSCRIPTS_DIR}/{json_ending}'
+    create_directories_if_necessary(transcript_fpath)
 
-    # start the transcription
-    print(f'Starting the transcription job {job_name}')
-    response = transcribe.start_transcription_job(
-        TranscriptionJobName=job_name,
-        Media={'MediaFileUri': f's3://{BUCKET}/{audio_rel_fpath}'},
-        MediaFormat=DEF_AUDIO_SUFFIX[1:],
-        LanguageCode=language_code
-    )
+    with open(transcript_fpath, 'w') as f:
+        json.dump(transcript_json, f)
 
-    # wait till finished
-    before = time.time()
-    MAX_SEC = 60*10 # 10 min
+
+def _wait_for_transcribe_to_finish(transcribe_client, job_name, max_minutes=10):
+    start_time = time.time()
+    max_sec = 60 * max_minutes
+
     while True:
-        status = transcribe.get_transcription_job(TranscriptionJobName=job_name)
+        status = transcribe_client.get_transcription_job(
+            TranscriptionJobName=job_name
+        )
         if status['TranscriptionJob']['TranscriptionJobStatus'] in [
             'COMPLETED',
             'FAILED'
         ]:
             break
 
-        if time.time() - before > MAX_SEC:
-            logging.error(f'Transcription is taking longer than {MAX_SEC}s')
+        if time.time() - start_time > max_sec:
+            logging.error(f'Transcription is taking longer than {max_sec}s')
             logging.error(f'Terminating job {job_name}')
-            transcribe.delete_transcription_job(job_name)
+            transcribe_client.delete_transcription_job(job_name)
             raise TimeoutError('Transcription took too long')
 
         time.sleep(5)
-    after = time.time()
-    print(f'Done transcribing ({after - before:.2f}s)')
 
-    # get and save the transcript
-    url = status['TranscriptionJob']['Transcript']['TranscriptFileUri']
-    response = requests.get(url)
+    return status
 
-    json_ending = audio_rel_fpath.replace(DEF_AUDIO_SUFFIX, ".json")
-    transcript_fpath = f'{TRANSCRIPTS_DIR}/{json_ending}'
 
-    create_directories_if_necessary(transcript_fpath)
-    transcript = response.json()
-    with open(transcript_fpath, 'w') as f:
-        json.dump(transcript, f)
+def _delete_existing_transcribe_job(transcribe_client, job_name):
+    tr_jobs = transcribe_client.list_transcription_jobs()
+    tr_jobs = tr_jobs['TranscriptionJobSummaries']
+    tr_job_names = [
+        job['TranscriptionJobName']
+        for job in tr_jobs
+    ]
 
-    return transcript
+    if job_name in tr_job_names:
+        print(
+            f'\nJob with name "{job_name}" already exists, '
+            f'deleting the old one...'
+        )
+        transcribe_client.delete_transcription_job(
+            TranscriptionJobName=job_name
+        )

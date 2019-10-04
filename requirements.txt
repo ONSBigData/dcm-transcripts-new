@@ -24,5 +24,6 @@ pydub
 google-cloud-speech
 boto3
 aws-shell
+ffmpeg-python
 
 # https://github.com/tyiannak/pyAudioAnalysis - manual (clone, cd into and `pip install -e .`)

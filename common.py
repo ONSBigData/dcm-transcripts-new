@@ -33,6 +33,25 @@ COLS_STRUC_TRANSCRIPT = [COL_SPEAKER, COL_START, COL_END, COL_TEXT]
 # ---------------------------------------------------------------------
 
 
+def path2id(audio_fpath, level_from=-2, level_to=None):
+    """
+    E.g. from
+
+    "/home/ons21553/wspace/interview-transcripts/data/recordings/bbc_interview/audio.mp3"
+
+    makes
+
+    "bbc_interview__audio"
+    """
+
+    audio_fpath = os.path.abspath(audio_fpath)
+
+    _id = '.'.join(audio_fpath.split('.')[:-1])
+    _id = '__'.join(_id.split('/')[level_from:level_to])
+
+    return _id
+
+
 def setup_logging():
     logging.basicConfig(
         level=logging.DEBUG,
