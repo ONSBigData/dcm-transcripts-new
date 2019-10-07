@@ -49,7 +49,7 @@ def transcribe(audio_fpath, language_code, prefix='noprefix'):
     response = transcribe_client.start_transcription_job(
         TranscriptionJobName=job_name,
         Media={'MediaFileUri': f's3://{BUCKET}/{bucket_fpath}'},
-        MediaFormat=DEF_AUDIO_SUFFIX[1:],
+        MediaFormat='mp3',
         LanguageCode=language_code
     )
     _print(f'\nTranscription started with response: {response}')
@@ -105,7 +105,7 @@ def _get_transcript_from_status(status):
 
 def _save_transcript(transcript_json, audio_fpath):
     audio_rel_fpath = _get_fname(audio_fpath)
-    json_ending = audio_rel_fpath.replace(DEF_AUDIO_SUFFIX, ".json")
+    json_ending = audio_rel_fpath.replace('.mp3', ".json")
     transcript_fpath = f'{AWS_TRANSCRIPTS_DIR}/{json_ending}'
     create_directories_if_necessary(transcript_fpath)
 

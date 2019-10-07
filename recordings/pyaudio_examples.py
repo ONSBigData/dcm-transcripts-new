@@ -13,8 +13,8 @@ DIR = from_data_root('recordings/pyaudio_examples/')[:-1]
 
 def get_fnames():
     return [
-        f.replace(DEF_AUDIO_SUFFIX, '')
-        for f in os.listdir(DIR) if f.endswith(DEF_AUDIO_SUFFIX)
+        f.replace('.mp3', '')
+        for f in os.listdir(DIR) if f.endswith('.mp3')
     ]
 
 
@@ -43,7 +43,7 @@ def load_all():
 def load(fname):
     r = Recording()
 
-    r.audio_fpath = f'{DIR}/{fname}{DEF_AUDIO_SUFFIX}'
+    r.audio_fpath = f'{DIR}/{fname}.mp3'
 
     df_st = pd.read_csv(f'{DIR}/{fname}_struc_trancript.csv', index_col=0)
     r.structured_transcript = df_st

@@ -13,8 +13,8 @@ DIR = from_data_root('recordings/dcm_test_iws/')[:-1]
 
 def get_fnames():
     return [
-        f.replace(DEF_AUDIO_SUFFIX, '')
-        for f in os.listdir(DIR) if f.endswith(DEF_AUDIO_SUFFIX)
+        f.replace('.mp3', '')
+        for f in os.listdir(DIR) if f.endswith('.mp3')
     ]
 
 
@@ -29,7 +29,7 @@ def load_all():
 def load(fname):
     r = Recording()
 
-    r.audio_fpath = f'{DIR}/{fname}{DEF_AUDIO_SUFFIX}'
+    r.audio_fpath = f'{DIR}/{fname}.mp3'
 
     r.structured_transcript = None
     r.no_speakers = None

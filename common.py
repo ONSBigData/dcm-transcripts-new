@@ -10,12 +10,17 @@ import logging
 # --- Config
 # ---------------------------------------------------------------------
 
-ROOT_FOLDER = '/../'  # set where is the root folder of this project, relative of this file
-SRC_FOLDER = '/'  # set where is the source root folder of this project, relative of this file
-DATA_FOLDER = '/../data/'  # set where is the data folder (storing e.g. outputs from scraping), relative of this file
+# set where is the root folder of this project, relative of this file
+ROOT_DIR = '../'
 
-DEF_AUDIO_SUFFIX = '.mp3'
+# set where is the source root folder of this project, relative of ROOT
+SRC_DIR = 'src'
 
+# set where is the data folder, relative of ROOT
+DATA_DIR = 'data'
+
+# set where is the temp folder is, relative of ROOT
+TEMP_DIR = 'data/temp'
 
 # ---------------------------------------------------------------------
 # --- Constants
@@ -59,9 +64,21 @@ def setup_logging():
     )
 
 
+def get_fname_without_ext(fpath):
+    base_name = os.path.basename(fpath)
+    fname = '.'.join(base_name.split('.')[:-1])
+
+    return fname
+
+
+def get_fname_with_ext(fpath):
+    return os.path.basename(fpath)
+
+
 def create_directories_if_necessary(path):
     """
-    Given a path, creates all the directories necessary till the last '/' encountered. E.g.
+    Given a path, creates all the directories necessary till the last '/'
+    encountered. E.g.
 
     if '/path/to/' exists and the path argument is '/path/to/file/is/this',
     calling this would create '/path/to/file/is/'
@@ -82,8 +99,9 @@ def from_root(path, create_if_needed=False):
     """
     Returns path with project root prepended
     """
-    proj_root = os.path.realpath(os.path.dirname(__file__)) + ROOT_FOLDER
-    result_path = proj_root + path
+    this_file_dir = os.path.realpath(os.path.dirname(__file__))
+    proj_root = os.path.join(this_file_dir, ROOT_DIR)
+    result_path = os.path.join(proj_root, path)
 
     if create_if_needed:
         create_directories_if_necessary(result_path)
@@ -95,20 +113,22 @@ def from_src_root(path, create_if_needed=False):
     """
     Returns path with project root prepended
     """
-    return from_root(f'src/{path}', create_if_needed=create_if_needed)
+    return from_root(f'{SRC_DIR}/{path}', create_if_needed=create_if_needed)
 
 
 def from_data_root(path, create_if_needed=False):
     """
     Returns path with data project root prepended
     """
-    proj_data_root = os.path.realpath(os.path.dirname(__file__)) + DATA_FOLDER
-    result_path = proj_data_root + path
+    return from_root(f'{DATA_DIR}/{path}', create_if_needed=create_if_needed)
 
-    if create_if_needed:
-        create_directories_if_necessary(result_path)
 
-    return result_path
+def from_temp_dir(path, create_if_needed=False):
+    """
+    Returns path with data project root prepended
+    """
+    return from_root(f'{TEMP_DIR}/{path}', create_if_needed=create_if_needed)
+
 
 # ---------------------------------------------------------------------
 # --- Timing of code
@@ -137,3 +157,17 @@ def end_timing(id, msg=''):
     print()
 
 
+# ---------------------------------------------------------------------
+# --- Executing
+# ---------------------------------------------------------------------
+
+# run these to create dir structure first time if not existing
+from_src_root('', create_if_needed=True)
+from_data_root('', create_if_needed=True)
+from_temp_dir('', create_if_needed=True)
+
+if __name__ == '__main__':
+    # test
+    print(from_src_root('some_src'))
+    print(from_data_root('some_data'))
+    print(from_temp_dir('some_temp'))

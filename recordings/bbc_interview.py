@@ -24,7 +24,7 @@ def prep():
 def load():
     r = Recording()
 
-    r.audio_fpath = f'{FPATH}/audio{DEF_AUDIO_SUFFIX}'
+    r.audio_fpath = f'{FPATH}/audio.mp3'
     r.transcript_fpath = TRANSCRIPT_FPATH
 
     r.no_speakers = 2

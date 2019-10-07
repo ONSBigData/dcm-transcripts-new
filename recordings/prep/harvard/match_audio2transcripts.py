@@ -60,7 +60,7 @@ def get_mappings():
 
     audio_fpaths = [
         f'{hv_common.DIR_PREP}/{f}'
-        for f in os.listdir(hv_common.DIR_PREP) if f.endswith(DEF_AUDIO_SUFFIX)
+        for f in os.listdir(hv_common.DIR_PREP) if f.endswith('.mp3')
     ]
 
     mapping = {
@@ -77,8 +77,8 @@ def create_matched_pairs():
     for audio_fpath, transcript_fpath in mapping.items():
         if transcript_fpath is None:
             continue
-        fname = os.path.basename(audio_fpath).replace(DEF_AUDIO_SUFFIX, '')
-        shutil.copyfile(audio_fpath, f'{hv_common.DIR}/{fname}{DEF_AUDIO_SUFFIX}')
+        fname = os.path.basename(audio_fpath).replace('.mp3', '')
+        shutil.copyfile(audio_fpath, f'{hv_common.DIR}/{fname}.mp3')
         shutil.copyfile(transcript_fpath, f'{hv_common.DIR}/{fname}.txt')
 
 

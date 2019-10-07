@@ -19,7 +19,7 @@ def prep():
     print('scraping audio files...')
     scrape_audio.scrape_audio()
 
-    print(f'convert audios to {DEF_AUDIO_SUFFIX}')
+    print(f'convert audios to mp3')
     convert_audios.convert_audios()
 
     print('scraping transcripts...')
@@ -52,15 +52,15 @@ def prep_structured_transcripts():
 
 def get_fnames():
     return [
-        f.replace(DEF_AUDIO_SUFFIX, '')
-        for f in os.listdir(hv_common.DIR) if f.endswith(DEF_AUDIO_SUFFIX)
+        f.replace('.mp3', '')
+        for f in os.listdir(hv_common.DIR) if f.endswith('.mp3')
     ]
 
 
 def load(fname):
     r = Recording()
 
-    r.audio_fpath = f'{hv_common.DIR}/{fname}{DEF_AUDIO_SUFFIX}'
+    r.audio_fpath = f'{hv_common.DIR}/{fname}.mp3'
     r.transcript_fpath = f'{hv_common.DIR}/{fname}.txt'
 
     r.no_speakers = 1
@@ -75,8 +75,8 @@ def load(fname):
 
 def load_all():
     fnames = [
-        f.replace(DEF_AUDIO_SUFFIX, '')
-        for f in os.listdir(hv_common.DIR) if f.endswith(DEF_AUDIO_SUFFIX)
+        f.replace('.mp3', '')
+        for f in os.listdir(hv_common.DIR) if f.endswith('.mp3')
     ]
 
     recordings = [load(fname) for fname in fnames]

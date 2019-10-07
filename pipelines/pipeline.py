@@ -1,6 +1,8 @@
 from common import *
 import shutil
 import json
+import os
+import glob
 
 
 class Pipeline:
@@ -23,6 +25,14 @@ class Pipeline:
         # copy the raw recording to the pipeline dir
         self.raw_fpath = f'{self.pipeline_dir}/raw.mp3'
         shutil.copyfile(audio_fpath, self.raw_fpath)
+
+    def clear_pipeline_dir(self):
+        files = glob.glob(f'{self.pipeline_dir}/*')
+        print(files)
+        for f in files:
+            if f == self.raw_fpath:
+                continue
+            os.remove(f)
 
     def run_segmentation(self):
         raise NotImplementedError

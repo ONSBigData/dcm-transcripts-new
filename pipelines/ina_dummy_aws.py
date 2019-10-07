@@ -21,13 +21,13 @@ def _make_segment(seg, i, audio, target_dir):
     return seg_audio_fpath
 
 
-def _get_raw_transcript(seg_audio_fpath, run_id):
+def _get_raw_transcript(seg_audio_fpath, run_id, index):
     print(f'Transcribing {seg_audio_fpath}')
 
     seg_transcript_raw = aws_trancribe.transcribe(
         seg_audio_fpath,
         'en-GB',
-        prefix=run_id
+        prefix=f'{run_id}-{index}'
     )
 
     return seg_transcript_raw
@@ -96,7 +96,7 @@ class InaDummyAwsPipeline(Pipeline):
         # transcribe them
         with mp.Pool(10) as pool:
             params = [
-                (seg_audio_fpath, self.run_id)
+                (seg_audio_fpath, self.run_id, i)
                 for i, seg_audio_fpath in enumerate(seg_audio_fpaths)
             ]
             seg_transcripts_raw = pool.starmap(_get_raw_transcript, params)
@@ -138,6 +138,8 @@ class InaDummyAwsPipeline(Pipeline):
         return dia_segments
 
     def run_all(self, force_rerun=False):
+        self.clear_pipeline_dir()
+
         self.run_segmentation(force_rerun)
         self.run_diarization(force_rerun)
         self.run_transcription(force_rerun)
@@ -147,14 +149,19 @@ class InaDummyAwsPipeline(Pipeline):
 
 if __name__ == '__main__':
     import recordings.recs as recs
+    import support.audiomanip as audiomanip
 
     r = recs.bbc_interview.load()
     audio_fpath = r.audio_fpath
 
-    run_id = path2id(audio_fpath, level_to=-1)
+    slice_to_s = 47
+    run_id = f'{path2id(audio_fpath, level_to=-1)}-{slice_to_s}'
 
-    pipeline = InaDummyAwsPipeline(audio_fpath, run_id)
-    pipeline.run_transcription()
-    pipeline.create_final()
+    temp_fpath = audiomanip.create_audio_slice_in_temp(
+        audio_fpath, 0, slice_to_s
+    )
+
+    pipeline = InaDummyAwsPipeline(temp_fpath, run_id)
+    pipeline.run_all()
 
 
