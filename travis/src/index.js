@@ -3,14 +3,14 @@ import { createContext } from "react";
 import { render } from "react-dom";
 import App from './components/App'
 import './css/styles.scss';
+import { AudioStatusProvider } from "./components/audio-status-hooks.js";
+
 
 window.React = React;
 
-export const AudioContext = createContext();
-
 render(
-    <AudioContext.Provider>
+    <AudioStatusProvider>
         <App />
-    </AudioContext.Provider>
+    </AudioStatusProvider>
     , document.getElementById("react-container")   
 )

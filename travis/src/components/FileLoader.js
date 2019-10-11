@@ -19,11 +19,14 @@ export default function FileLoader({
     };
 
     return (
-        <form onSubmit={onSubmit} className="file-load">
-            <label>Transcript: <input type="file" ref={transcriptInput} /></label><br/>
-            {/* <label>Audio: <input type="file" ref={audioInput} /></label><br/> */}
+        <div class="file-load-control control-div">
+            <b>File loading</b>
+            <form onSubmit={onSubmit} className="file-load">
+                <label>Transcript: <input type="file" ref={transcriptInput} /></label><br/>
+                {/* <label>Audio: <input type="file" ref={audioInput} /></label><br/> */}
 
-            <button type="submit">Submit</button>
-        </form>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     );    
 }

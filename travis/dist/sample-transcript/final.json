@@ -1,1 +1,1721 @@
-{"name": "bbc_interview-25", "segments": [{"start_s": 0.5, "end_s": 2.52, "type": "Male", "speaker_id": 0, "words": [{"word": "this", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "recording", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "is", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "from", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "the", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "British", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "Council", "confidence": "0.9969", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}]}, {"start_s": 7.0600000000000005, "end_s": 10.08, "type": "Male", "speaker_id": 0, "words": [{"word": "Hello", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ",", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "Maria", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "Thanks", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "for", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "coming", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "in", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "for", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "the", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "interview", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}]}, {"start_s": 10.08, "end_s": 12.14, "type": "Female", "speaker_id": 1, "words": [{"word": "It's", "confidence": "0.9891", "others": {"type": "pronunciation"}}, {"word": "my", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "pleasure", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "Thanks", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "for", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "inviting", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "me", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}]}, {"start_s": 12.14, "end_s": 22.080000000000002, "type": "Male", "speaker_id": 0, "words": [{"word": "Well", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ",", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "as", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "you", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "know", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ",", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "the", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "company", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "has", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "been", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "expanding", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "and", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "we", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "have", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "an", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "opening", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "in", "confidence": "0.7084", "others": {"type": "pronunciation"}}, {"word": "our", "confidence": "0.9449", "others": {"type": "pronunciation"}}, {"word": "HR", "confidence": "0.9257", "others": {"type": "pronunciation"}}, {"word": "department", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "We're", "confidence": "0.941", "others": {"type": "pronunciation"}}, {"word": "creating", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "a", "confidence": "0.9216", "others": {"type": "pronunciation"}}, {"word": "new", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "role", "confidence": "0.9896", "others": {"type": "pronunciation"}}, {"word": "for", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "someone", "confidence": "0.9905", "others": {"type": "pronunciation"}}, {"word": "to", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "lead", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "our", "confidence": "0.9889", "others": {"type": "pronunciation"}}, {"word": "training", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "and", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "development", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "within", "confidence": "0.9998", "others": {"type": "pronunciation"}}, {"word": "the", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "company", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ".", "confidence": "0.0", "others": {"type": "punctuation"}}]}, {"start_s": 22.080000000000002, "end_s": 24.92, "type": "Female", "speaker_id": 1, "words": [{"word": "Yes", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": ",", "confidence": "0.0", "others": {"type": "punctuation"}}, {"word": "I", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "very", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "much", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "think", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "that", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "my", "confidence": "0.9998", "others": {"type": "pronunciation"}}, {"word": "skills", "confidence": "1.0", "others": {"type": "pronunciation"}}, {"word": "in", "confidence": "0.9024", "others": {"type": "pronunciation"}}]}]}
+{
+  "name": "bbc_interview-120",
+  "segments": [
+  {
+    "start_s": 0.5,
+    "end_s": 2.52,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "this",
+        "confidence": "1.0"
+      },
+      {
+        "word": "recording",
+        "confidence": "1.0"
+      },
+      {
+        "word": "is",
+        "confidence": "1.0"
+      },
+      {
+        "word": "from",
+        "confidence": "1.0"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "British",
+        "confidence": "1.0"
+      },
+      {
+        "word": "Council",
+        "confidence": "0.9969"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 7.0600000000000005,
+    "end_s": 10.08,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "Hello",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Maria",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Thanks",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "coming",
+        "confidence": "1.0"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "interview",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 10.08,
+    "end_s": 12.14,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "It's",
+        "confidence": "0.9891"
+      },
+      {
+        "word": "my",
+        "confidence": "1.0"
+      },
+      {
+        "word": "pleasure",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Thanks",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "inviting",
+        "confidence": "1.0"
+      },
+      {
+        "word": "me",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 12.14,
+    "end_s": 22.080000000000002,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "Well",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "as",
+        "confidence": "1.0"
+      },
+      {
+        "word": "you",
+        "confidence": "1.0"
+      },
+      {
+        "word": "know",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "company",
+        "confidence": "1.0"
+      },
+      {
+        "word": "has",
+        "confidence": "1.0"
+      },
+      {
+        "word": "been",
+        "confidence": "1.0"
+      },
+      {
+        "word": "expanding",
+        "confidence": "1.0"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "we",
+        "confidence": "1.0"
+      },
+      {
+        "word": "have",
+        "confidence": "1.0"
+      },
+      {
+        "word": "an",
+        "confidence": "1.0"
+      },
+      {
+        "word": "opening",
+        "confidence": "1.0"
+      },
+      {
+        "word": "in",
+        "confidence": "0.7084"
+      },
+      {
+        "word": "our",
+        "confidence": "0.9449"
+      },
+      {
+        "word": "HR",
+        "confidence": "0.9257"
+      },
+      {
+        "word": "department",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "We're",
+        "confidence": "0.941"
+      },
+      {
+        "word": "creating",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "0.9216"
+      },
+      {
+        "word": "new",
+        "confidence": "1.0"
+      },
+      {
+        "word": "role",
+        "confidence": "0.9896"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "someone",
+        "confidence": "0.9905"
+      },
+      {
+        "word": "to",
+        "confidence": "1.0"
+      },
+      {
+        "word": "lead",
+        "confidence": "1.0"
+      },
+      {
+        "word": "our",
+        "confidence": "0.9889"
+      },
+      {
+        "word": "training",
+        "confidence": "1.0"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "development",
+        "confidence": "1.0"
+      },
+      {
+        "word": "within",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "company",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 22.080000000000002,
+    "end_s": 27.18,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "Yes",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "I",
+        "confidence": "1.0"
+      },
+      {
+        "word": "very",
+        "confidence": "1.0"
+      },
+      {
+        "word": "much",
+        "confidence": "1.0"
+      },
+      {
+        "word": "think",
+        "confidence": "1.0"
+      },
+      {
+        "word": "that",
+        "confidence": "1.0"
+      },
+      {
+        "word": "my",
+        "confidence": "0.9997"
+      },
+      {
+        "word": "skills",
+        "confidence": "1.0"
+      },
+      {
+        "word": "and",
+        "confidence": "0.9967"
+      },
+      {
+        "word": "experience",
+        "confidence": "0.9967"
+      },
+      {
+        "word": "are",
+        "confidence": "0.9832"
+      },
+      {
+        "word": "a",
+        "confidence": "0.9991"
+      },
+      {
+        "word": "good",
+        "confidence": "0.9991"
+      },
+      {
+        "word": "fit",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "what",
+        "confidence": "0.9949"
+      },
+      {
+        "word": "you're",
+        "confidence": "0.9053"
+      },
+      {
+        "word": "looking",
+        "confidence": "0.9931"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 27.18,
+    "end_s": 37.06,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "for",
+        "confidence": "0.9796"
+      },
+      {
+        "word": "that",
+        "confidence": "1.0"
+      },
+      {
+        "word": "Sounds",
+        "confidence": "0.9945"
+      },
+      {
+        "word": "great",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Eso",
+        "confidence": "0.4359"
+      },
+      {
+        "word": "your",
+        "confidence": "0.9958"
+      },
+      {
+        "word": "CVI",
+        "confidence": "0.5387"
+      },
+      {
+        "word": "looks",
+        "confidence": "0.7335"
+      },
+      {
+        "word": "strong",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "though",
+        "confidence": "0.9977"
+      },
+      {
+        "word": "it",
+        "confidence": "1.0"
+      },
+      {
+        "word": "would",
+        "confidence": "1.0"
+      },
+      {
+        "word": "be",
+        "confidence": "1.0"
+      },
+      {
+        "word": "good",
+        "confidence": "1.0"
+      },
+      {
+        "word": "if",
+        "confidence": "1.0"
+      },
+      {
+        "word": "you",
+        "confidence": "1.0"
+      },
+      {
+        "word": "could",
+        "confidence": "1.0"
+      },
+      {
+        "word": "give",
+        "confidence": "1.0"
+      },
+      {
+        "word": "us",
+        "confidence": "1.0"
+      },
+      {
+        "word": "an",
+        "confidence": "1.0"
+      },
+      {
+        "word": "overview",
+        "confidence": "1.0"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "your",
+        "confidence": "0.9997"
+      },
+      {
+        "word": "own",
+        "confidence": "1.0"
+      },
+      {
+        "word": "words",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "what",
+        "confidence": "1.0"
+      },
+      {
+        "word": "you've",
+        "confidence": "0.9925"
+      },
+      {
+        "word": "been",
+        "confidence": "1.0"
+      },
+      {
+        "word": "doing",
+        "confidence": "1.0"
+      },
+      {
+        "word": "over",
+        "confidence": "1.0"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "past",
+        "confidence": "1.0"
+      },
+      {
+        "word": "four",
+        "confidence": "1.0"
+      },
+      {
+        "word": "years",
+        "confidence": "1.0"
+      },
+      {
+        "word": "or",
+        "confidence": "0.9954"
+      },
+      {
+        "word": "so",
+        "confidence": "0.9951"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 37.06,
+    "end_s": 48.120000000000005,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "Well",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "my",
+        "confidence": "1.0"
+      },
+      {
+        "word": "first",
+        "confidence": "1.0"
+      },
+      {
+        "word": "job",
+        "confidence": "1.0"
+      },
+      {
+        "word": "four",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "years",
+        "confidence": "1.0"
+      },
+      {
+        "word": "ago",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "I",
+        "confidence": "1.0"
+      },
+      {
+        "word": "was",
+        "confidence": "1.0"
+      },
+      {
+        "word": "working",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "0.7301"
+      },
+      {
+        "word": "small",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "HR",
+        "confidence": "0.5626"
+      },
+      {
+        "word": "services",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "provider",
+        "confidence": "0.995"
+      },
+      {
+        "word": "which",
+        "confidence": "1.0"
+      },
+      {
+        "word": "offered",
+        "confidence": "1.0"
+      },
+      {
+        "word": "hate",
+        "confidence": "0.8137"
+      },
+      {
+        "word": "our",
+        "confidence": "0.8857"
+      },
+      {
+        "word": "services",
+        "confidence": "0.9997"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "including",
+        "confidence": "1.0"
+      },
+      {
+        "word": "el",
+        "confidence": "0.2585"
+      },
+      {
+        "word": "nd",
+        "confidence": "0.4766"
+      },
+      {
+        "word": "to",
+        "confidence": "0.8102"
+      },
+      {
+        "word": "corporate",
+        "confidence": "1.0"
+      },
+      {
+        "word": "clients",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Okay",
+        "confidence": "0.8173"
+      },
+      {
+        "word": "?",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 48.120000000000005,
+    "end_s": 50.56,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "so",
+        "confidence": "1.0"
+      },
+      {
+        "word": "it",
+        "confidence": "1.0"
+      },
+      {
+        "word": "was",
+        "confidence": "1.0"
+      },
+      {
+        "word": "only",
+        "confidence": "1.0"
+      },
+      {
+        "word": "B",
+        "confidence": "0.794"
+      },
+      {
+        "word": "to",
+        "confidence": "0.7492"
+      },
+      {
+        "word": "B",
+        "confidence": "0.7811"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 50.56,
+    "end_s": 54.94,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "Yes",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "We",
+        "confidence": "0.9996"
+      },
+      {
+        "word": "only",
+        "confidence": "1.0"
+      },
+      {
+        "word": "offered",
+        "confidence": "1.0"
+      },
+      {
+        "word": "services",
+        "confidence": "0.9996"
+      },
+      {
+        "word": "to",
+        "confidence": "0.9691"
+      },
+      {
+        "word": "other",
+        "confidence": "1.0"
+      },
+      {
+        "word": "companies",
+        "confidence": "0.9734"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "not",
+        "confidence": "0.9988"
+      },
+      {
+        "word": "B",
+        "confidence": "0.7995"
+      },
+      {
+        "word": "to",
+        "confidence": "0.907"
+      },
+      {
+        "word": "C",
+        "confidence": "0.7842"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 54.94,
+    "end_s": 55.9,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "right",
+        "confidence": "0.9922"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 56.4,
+    "end_s": 60.64,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "on",
+        "confidence": "0.9208"
+      },
+      {
+        "word": "it",
+        "confidence": "0.9959"
+      },
+      {
+        "word": "says",
+        "confidence": "1.0"
+      },
+      {
+        "word": "here",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "You",
+        "confidence": "0.9971"
+      },
+      {
+        "word": "then",
+        "confidence": "1.0"
+      },
+      {
+        "word": "left",
+        "confidence": "1.0"
+      },
+      {
+        "word": "that",
+        "confidence": "0.9845"
+      },
+      {
+        "word": "company",
+        "confidence": "1.0"
+      },
+      {
+        "word": "about",
+        "confidence": "0.9898"
+      },
+      {
+        "word": "three",
+        "confidence": "1.0"
+      },
+      {
+        "word": "years",
+        "confidence": "1.0"
+      },
+      {
+        "word": "ago",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 61.22,
+    "end_s": 72.92,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "Yes",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "that's",
+        "confidence": "1.0"
+      },
+      {
+        "word": "right",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "I",
+        "confidence": "0.9977"
+      },
+      {
+        "word": "was",
+        "confidence": "1.0"
+      },
+      {
+        "word": "looking",
+        "confidence": "0.9249"
+      },
+      {
+        "word": "for",
+        "confidence": "0.9249"
+      },
+      {
+        "word": "a",
+        "confidence": "1.0"
+      },
+      {
+        "word": "little",
+        "confidence": "1.0"
+      },
+      {
+        "word": "more",
+        "confidence": "1.0"
+      },
+      {
+        "word": "stability",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "also",
+        "confidence": "1.0"
+      },
+      {
+        "word": "to",
+        "confidence": "1.0"
+      },
+      {
+        "word": "be",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "part",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "1.0"
+      },
+      {
+        "word": "larger",
+        "confidence": "0.9982"
+      },
+      {
+        "word": "organisation",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "So",
+        "confidence": "1.0"
+      },
+      {
+        "word": "I",
+        "confidence": "1.0"
+      },
+      {
+        "word": "joined",
+        "confidence": "0.9972"
+      },
+      {
+        "word": "a",
+        "confidence": "0.9923"
+      },
+      {
+        "word": "company",
+        "confidence": "0.9958"
+      },
+      {
+        "word": "with",
+        "confidence": "1.0"
+      },
+      {
+        "word": "around",
+        "confidence": "0.9939"
+      },
+      {
+        "word": "100",
+        "confidence": "0.99995"
+      },
+      {
+        "word": "stuff",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "1.0"
+      },
+      {
+        "word": "small",
+        "confidence": "0.9983"
+      },
+      {
+        "word": "hate",
+        "confidence": "0.7653"
+      },
+      {
+        "word": "our",
+        "confidence": "0.8806"
+      },
+      {
+        "word": "team",
+        "confidence": "0.9882"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 73.84,
+    "end_s": 84.82000000000001,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "as",
+        "confidence": "1.0"
+      },
+      {
+        "word": "there",
+        "confidence": "1.0"
+      },
+      {
+        "word": "are",
+        "confidence": "1.0"
+      },
+      {
+        "word": "only",
+        "confidence": "0.9529"
+      },
+      {
+        "word": "a",
+        "confidence": "1.0"
+      },
+      {
+        "word": "few",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "us",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "We",
+        "confidence": "0.9997"
+      },
+      {
+        "word": "each",
+        "confidence": "1.0"
+      },
+      {
+        "word": "deal",
+        "confidence": "1.0"
+      },
+      {
+        "word": "with",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "0.9981"
+      },
+      {
+        "word": "range",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "hate",
+        "confidence": "0.9588"
+      },
+      {
+        "word": "our",
+        "confidence": "0.7754"
+      },
+      {
+        "word": "topics",
+        "confidence": "0.9999"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "In",
+        "confidence": "1.0"
+      },
+      {
+        "word": "addition",
+        "confidence": "1.0"
+      },
+      {
+        "word": "to",
+        "confidence": "0.9898"
+      },
+      {
+        "word": "payroll",
+        "confidence": "0.8734"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "one",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "the",
+        "confidence": "1.0"
+      },
+      {
+        "word": "areas",
+        "confidence": "0.8725"
+      },
+      {
+        "word": "I",
+        "confidence": "0.6711"
+      },
+      {
+        "word": "was",
+        "confidence": "1.0"
+      },
+      {
+        "word": "responsible",
+        "confidence": "1.0"
+      },
+      {
+        "word": "for",
+        "confidence": "1.0"
+      },
+      {
+        "word": "was",
+        "confidence": "1.0"
+      },
+      {
+        "word": "learning",
+        "confidence": "1.0"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "development",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "I",
+        "confidence": "0.9936"
+      },
+      {
+        "word": "see",
+        "confidence": "0.9343"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 84.82000000000001,
+    "end_s": 87.62,
+    "type": "Male",
+    "speaker_id": 0,
+    "words": [
+      {
+        "word": "on",
+        "confidence": "0.992"
+      },
+      {
+        "word": "DH",
+        "confidence": "0.9207"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "So",
+        "confidence": "0.9997"
+      },
+      {
+        "word": "why",
+        "confidence": "0.9987"
+      },
+      {
+        "word": "do",
+        "confidence": "1.0"
+      },
+      {
+        "word": "you",
+        "confidence": "1.0"
+      },
+      {
+        "word": "want",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "to",
+        "confidence": "1.0"
+      },
+      {
+        "word": "change",
+        "confidence": "1.0"
+      },
+      {
+        "word": "jobs",
+        "confidence": "0.9964"
+      },
+      {
+        "word": "now",
+        "confidence": "1.0"
+      },
+      {
+        "word": "?",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 89.12,
+    "end_s": 97.02,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "Well",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "I",
+        "confidence": "0.9981"
+      },
+      {
+        "word": "very",
+        "confidence": "1.0"
+      },
+      {
+        "word": "much",
+        "confidence": "1.0"
+      },
+      {
+        "word": "like",
+        "confidence": "0.9849"
+      },
+      {
+        "word": "the",
+        "confidence": "0.9372"
+      },
+      {
+        "word": "Ellen",
+        "confidence": "0.6689"
+      },
+      {
+        "word": "de",
+        "confidence": "0.3901"
+      },
+      {
+        "word": "side",
+        "confidence": "0.9044"
+      },
+      {
+        "word": "of",
+        "confidence": "1.0"
+      },
+      {
+        "word": "my",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "role",
+        "confidence": "0.9697"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "I've",
+        "confidence": "0.9978"
+      },
+      {
+        "word": "always",
+        "confidence": "1.0"
+      },
+      {
+        "word": "had",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "0.6646"
+      },
+      {
+        "word": "particularly",
+        "confidence": "1.0"
+      },
+      {
+        "word": "good",
+        "confidence": "0.7914"
+      },
+      {
+        "word": "feedback",
+        "confidence": "0.9994"
+      },
+      {
+        "word": "for",
+        "confidence": "0.6611"
+      },
+      {
+        "word": "my",
+        "confidence": "0.9969"
+      },
+      {
+        "word": "work",
+        "confidence": "1.0"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "this",
+        "confidence": "1.0"
+      },
+      {
+        "word": "area",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 97.62,
+    "end_s": 99.64,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "I",
+        "confidence": "1.0"
+      },
+      {
+        "word": "believe",
+        "confidence": "0.9991"
+      },
+      {
+        "word": "I",
+        "confidence": "0.9968"
+      },
+      {
+        "word": "excel",
+        "confidence": "0.9987"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "that",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "field",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 100.10000000000001,
+    "end_s": 104.36,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "so",
+        "confidence": "1.0"
+      },
+      {
+        "word": "I'm",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "looking",
+        "confidence": "1.0"
+      },
+      {
+        "word": "to",
+        "confidence": "1.0"
+      },
+      {
+        "word": "specialise",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "as",
+        "confidence": "1.0"
+      },
+      {
+        "word": "your",
+        "confidence": "0.9945"
+      },
+      {
+        "word": "company",
+        "confidence": "1.0"
+      },
+      {
+        "word": "has",
+        "confidence": "1.0"
+      },
+      {
+        "word": "around",
+        "confidence": "0.9524"
+      }
+    ]
+  },
+  {
+    "start_s": 104.86,
+    "end_s": 107.66,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "2000",
+        "confidence": "1.0"
+      },
+      {
+        "word": "people",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "right",
+        "confidence": "0.9959"
+      },
+      {
+        "word": "?",
+        "confidence": "0.0"
+      },
+      {
+        "word": "Yes",
+        "confidence": "1.0"
+      },
+      {
+        "word": ",",
+        "confidence": "0.0"
+      },
+      {
+        "word": "that's",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "right",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 108.22,
+    "end_s": 113.84,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "well",
+        "confidence": "1.0"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      },
+      {
+        "word": "A",
+        "confidence": "0.9549"
+      },
+      {
+        "word": "new",
+        "confidence": "0.9549"
+      },
+      {
+        "word": "organisation",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "0.9394"
+      },
+      {
+        "word": "this",
+        "confidence": "1.0"
+      },
+      {
+        "word": "size",
+        "confidence": "1.0"
+      },
+      {
+        "word": "would",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "give",
+        "confidence": "1.0"
+      },
+      {
+        "word": "me",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "this",
+        "confidence": "0.9564"
+      },
+      {
+        "word": "scope",
+        "confidence": "0.9999"
+      },
+      {
+        "word": "to",
+        "confidence": "0.999"
+      },
+      {
+        "word": "specialise",
+        "confidence": "1.0"
+      },
+      {
+        "word": "in",
+        "confidence": "1.0"
+      },
+      {
+        "word": "El",
+        "confidence": "0.3593"
+      },
+      {
+        "word": "Andy",
+        "confidence": "0.3281"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  },
+  {
+    "start_s": 114.64,
+    "end_s": 119.92,
+    "type": "Female",
+    "speaker_id": 1,
+    "words": [
+      {
+        "word": "I'm",
+        "confidence": "0.9944"
+      },
+      {
+        "word": "also",
+        "confidence": "1.0"
+      },
+      {
+        "word": "a",
+        "confidence": "1.0"
+      },
+      {
+        "word": "big",
+        "confidence": "1.0"
+      },
+      {
+        "word": "follower",
+        "confidence": "1.0"
+      },
+      {
+        "word": "of",
+        "confidence": "0.9998"
+      },
+      {
+        "word": "your",
+        "confidence": "0.9996"
+      },
+      {
+        "word": "brand",
+        "confidence": "0.9957"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "feel",
+        "confidence": "1.0"
+      },
+      {
+        "word": "fully",
+        "confidence": "1.0"
+      },
+      {
+        "word": "aligned",
+        "confidence": "1.0"
+      },
+      {
+        "word": "with",
+        "confidence": "1.0"
+      },
+      {
+        "word": "your",
+        "confidence": "0.8822"
+      },
+      {
+        "word": "image",
+        "confidence": "1.0"
+      },
+      {
+        "word": "and",
+        "confidence": "1.0"
+      },
+      {
+        "word": "values",
+        "confidence": "0.9997"
+      },
+      {
+        "word": ".",
+        "confidence": "0.0"
+      }
+    ]
+  }
+]
+}

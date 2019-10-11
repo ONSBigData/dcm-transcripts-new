@@ -10,12 +10,39 @@ body {
     line-height: 1.3em;
 }
 
+.control-div {
+    border: thin solid gray;
+    margin: 0.2em;
+    padding: 0.2em;
+}
+
+.file-load-control {
+
+}
+
 .file-load {
 
 }
 
 #full-audio {
     width: 100%;
+}
+
+.full-audio-control {
+
+}
+
+.seg-audio-control {
+    .seg-audio-stop {
+        margin-left: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        cursor: pointer;
+
+        &:hover {
+            background-color: coral;
+        }
+    }
 }
 
 .segment-list {
@@ -50,6 +77,12 @@ body {
     .seg-time {
         font-style: italic;
         font-size: 0.9em;
+        cursor: pointer;
+
+        &:hover {
+            background-color: coral;
+            border-radius: 0.2em;
+        }
     }
 
     .seg-speaker {

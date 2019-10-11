@@ -1,5 +1,6 @@
 import Word from './Word'
-import $ from 'jquery'
+// import $ from 'jquery'
+import { useAudioStatus } from "./audio-status-hooks";
 
 
 function makeWords(wordsData, segId) {
@@ -24,18 +25,18 @@ export default function Segment({
     speaker_id,
     words = []
 }) {
+    const { startPlaying } = useAudioStatus();
+
     const playAudio = () => {
-        var audio = $('#full-audio');
-        audio.currentTime = startSec;
-        audio.play();
+        startPlaying(startSec, endSec, segId);
     }    
 
     return (
         <div className="segment">
             <div className="seg-header">
-                <span className="seg-id">{segId}. </span>
+                <span className="seg-id">{segId}. </span><br/>
                 <a className="seg-time" onClick={playAudio}>
-                    ({startSec.toFixed(2)} - {endSec.toFixed(2)})
+                    &#9658; {startSec.toFixed(2)}s - {endSec.toFixed(2)}s
                 </a>
                 <br/>
 
