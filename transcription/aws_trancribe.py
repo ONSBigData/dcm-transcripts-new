@@ -139,18 +139,14 @@ def _wait_for_transcribe_to_finish(transcribe_client, job_name, max_minutes=10):
 
 
 def _delete_existing_transcribe_job(transcribe_client, job_name):
-    tr_jobs = transcribe_client.list_transcription_jobs()
-    tr_jobs = tr_jobs['TranscriptionJobSummaries']
-    tr_job_names = [
-        job['TranscriptionJobName']
-        for job in tr_jobs
-    ]
-
-    if job_name in tr_job_names:
-        print(
-            f'\nJob with name "{job_name}" already exists, '
-            f'deleting the old one...'
-        )
+    try:
         transcribe_client.delete_transcription_job(
             TranscriptionJobName=job_name
         )
+        print(
+            f'\nJob with name "{job_name}" already existed, so it was deleted'
+        )
+    except Exception as e:
+        if not 'The requested job couldn\'t be found' in str(e):
+            raise
+

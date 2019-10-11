@@ -8,12 +8,17 @@ export default function Word({
     wordId,
     word,
     confidence,
+    others={}
 }) {
     const [hovered, setHovered] = useState(false)
-    var color = scale(confidence);
-    var style = {
-        'background-color': color.alpha(hovered ? 0.8 : 0.3).hex(),
-    };
+
+    var style = {};
+
+    let isPunct = ('type' in others) && (others['type'] == 'punctuation');
+    if (!isPunct) {
+        var color = scale(confidence);
+        style['background-color'] = color.alpha(hovered ? 0.8 : 0.3).hex();
+    }
 
     //-------------- Rendering
 
@@ -21,7 +26,7 @@ export default function Word({
         <span 
                 className="word" 
                 style={style} 
-                onMouseEnter={(e) => setHovered(true)} 
+                onMouseEnter={(e) => setHovered(true)}
                 onMouseLeave={(e) => setHovered(false)}
                 data-tip 
                 data-for={`${wordId}_tooltip`}
@@ -31,7 +36,10 @@ export default function Word({
     )
 
     var tooltipElement = (
-        <ReactTooltip id={`${wordId}_tooltip`} aria-haspopup='true' role='example'>
+        <ReactTooltip 
+                id={`${wordId}_tooltip`} 
+                aria-haspopup='true'
+        >
             Confidence: {Number(confidence).toFixed(2)}
         </ReactTooltip>
     )

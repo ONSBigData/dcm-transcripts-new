@@ -25,9 +25,14 @@ module.exports = {
           'sass-loader',
         ],
       },
-
     ]
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: './src/index.html', to: 'index.html' },
+      { from: './src/sample-transcript', to: 'sample-transcript' }
+    ])
+  ],
   watch: true,
   devtool: "#source-map" 
 };

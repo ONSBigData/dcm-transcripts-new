@@ -5,6 +5,7 @@ import transcription.aws_trancribe as aws_trancribe
 from pydub import AudioSegment
 from common import *
 import multiprocessing as mp
+import traceback
 
 # ---------------------------------------------------------------------
 # --- Functions that need to be top-level due to being used in parallelization
@@ -24,11 +25,18 @@ def _make_segment(seg, i, audio, target_dir):
 def _get_raw_transcript(seg_audio_fpath, run_id, index):
     print(f'Transcribing {seg_audio_fpath}')
 
-    seg_transcript_raw = aws_trancribe.transcribe(
-        seg_audio_fpath,
-        'en-GB',
-        prefix=f'{run_id}-{index}'
-    )
+
+    try:
+        seg_transcript_raw = aws_trancribe.transcribe(
+            seg_audio_fpath,
+            'en-GB',
+            prefix=f'{run_id}-{index}'
+        )
+    except Exception as e:
+        print(f'Exception getting transcript for {run_id}-{index}')
+        print(e)
+        traceback.print_exc()
+        return None
 
     return seg_transcript_raw
 
@@ -110,7 +118,10 @@ class InaDummyAwsPipeline(Pipeline):
         def _extract_words(seg_transcript_raw):
             words = [{
                 'word': i['alternatives'][0]['content'],
-                'confidence': i['alternatives'][0]['confidence']
+                'confidence': i['alternatives'][0]['confidence'],
+                'others': {
+                    'type': i['type']
+                }
             } for i in seg_transcript_raw['results']['items']]
 
             return words
@@ -133,9 +144,15 @@ class InaDummyAwsPipeline(Pipeline):
         for i in range(len(dia_segments)):
             dia_segments[i]['words'] = seg_transcripts[i]
 
-        self.save_json(dia_segments, 'final')
+        final = {
+            'name': self.run_id,
+            'segments': dia_segments,
+        }
 
-        return dia_segments
+        fpath_json_fpath = self.save_json(final, 'final')
+        print(f'Final json created and saved in {fpath_json_fpath}')
+
+        return final
 
     def run_all(self, force_rerun=False):
         self.clear_pipeline_dir()
@@ -154,7 +171,7 @@ if __name__ == '__main__':
     r = recs.bbc_interview.load()
     audio_fpath = r.audio_fpath
 
-    slice_to_s = 120
+    slice_to_s = 47
     run_id = f'{path2id(audio_fpath, level_to=-1)}-{slice_to_s}'
 
     temp_fpath = audiomanip.create_audio_slice_in_temp(

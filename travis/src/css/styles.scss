@@ -7,6 +7,15 @@ $color-odd-darker: adjust-color($color-odd, $alpha: 0.4);
 body {
     font-family: 'Didact Gothic', 'Lucida Grande', Tahoma, Sans-Serif;
     font-size: 19px;
+    line-height: 1.3em;
+}
+
+.file-load {
+
+}
+
+#full-audio {
+    width: 100%;
 }
 
 .segment-list {
@@ -17,6 +26,8 @@ body {
     display: flex;
     margin-top: 1em;
     padding: 0.3em;
+    border-radius: 0.3em;
+    border: 2px black solid;
     
     &:nth-child(odd) {
         background-color: $color-odd;
@@ -29,6 +40,7 @@ body {
 
 .seg-header {
     flex: 0 0 20%;
+    border-right: dashed black 2px;
     
     .seg-id {
         font-size: 1.1em;
@@ -46,6 +58,7 @@ body {
 }
 
 .seg-body {
+    padding-left: 1em;
     flex: 1;
 }
 
@@ -58,9 +71,6 @@ body {
     cursor: pointer;
     border-radius: 0.2em;
     display: inline-block;
-    padding: 0.1em;
-
-    $word-distance: 0.2em;
-    margin-left: $word-distance;
-    margin-right: $word-distance;
+    padding: 0 0.2em 0 0.2em;
+    margin: 0.2em;
 }

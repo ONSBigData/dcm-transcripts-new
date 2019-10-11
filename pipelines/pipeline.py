@@ -51,6 +51,8 @@ class Pipeline:
         with open(fpath, 'w') as f:
             f.write(json.dumps(data))
 
+        return fpath
+
     def load_json(self, fname):
         fpath = f'{self.pipeline_dir}/{fname}.json'
 

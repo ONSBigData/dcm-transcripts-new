@@ -1,5 +1,4 @@
-from inaSpeechSegmenter import Segmenter
-
+import warnings
 
 # ---------------------------------------------------------------------
 # --- Public
@@ -7,9 +6,13 @@ from inaSpeechSegmenter import Segmenter
 
 
 def segment(audio_fpath):
-    segmenter = Segmenter()
+    warnings.filterwarnings("ignore")
 
+    from inaSpeechSegmenter import Segmenter
+    segmenter = Segmenter()
     segmentation = segmenter(audio_fpath)
+
+    warnings.resetwarnings()
 
     segments = [
         {

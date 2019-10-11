@@ -1,4 +1,5 @@
 import Word from './Word'
+import $ from 'jquery'
 
 
 function makeWords(wordsData, segId) {
@@ -23,12 +24,20 @@ export default function Segment({
     speaker_id,
     words = []
 }) {
+    const playAudio = () => {
+        var audio = $('#full-audio');
+        audio.currentTime = startSec;
+        audio.play();
+    }    
 
     return (
         <div className="segment">
             <div className="seg-header">
                 <span className="seg-id">{segId}. </span>
-                <span className="seg-time">({startSec.toFixed(2)} - {endSec.toFixed(2)})</span><br/>
+                <a className="seg-time" onClick={playAudio}>
+                    ({startSec.toFixed(2)} - {endSec.toFixed(2)})
+                </a>
+                <br/>
 
                 <span className="seg-speaker">Speaker: {speaker_id} ({speakerType})</span>
             </div>
