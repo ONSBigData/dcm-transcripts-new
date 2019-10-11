@@ -8,11 +8,13 @@ export default function App() {
     const [trData, setTrData] = useState(loadedTrData);
     
     return (
-        // <FileLoader />
+        <>
+            <FileLoader setData={setTrData} />
 
-        <SegmentList
-            segments={trData}
-        />
+            <SegmentList
+                segments={trData}
+            />
+        </>
     );
   }
   

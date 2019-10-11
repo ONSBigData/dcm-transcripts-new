@@ -1,9 +1,48 @@
+$color-even: rgba(206, 209, 206, 0.342);
+$color-odd: rgba(100, 105, 100, 0.342);
+$color-even-darker: adjust-color($color-even, $alpha: 0.4);
+$color-odd-darker: adjust-color($color-odd, $alpha: 0.4);
+
+
+body {
+    font-family: 'Didact Gothic', 'Lucida Grande', Tahoma, Sans-Serif;
+    font-size: 19px;
+}
+
+.segment-list {
+    margin: 3em;
+}
+
 .segment {
     display: flex;
+    margin-top: 1em;
+    padding: 0.3em;
+    
+    &:nth-child(odd) {
+        background-color: $color-odd;
+    }
+
+    &:nth-child(even) {
+        background-color: $color-even;
+    }
 }
 
 .seg-header {
-    flex: 0 0 15%;
+    flex: 0 0 20%;
+    
+    .seg-id {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .seg-time {
+        font-style: italic;
+        font-size: 0.9em;
+    }
+
+    .seg-speaker {
+        font-size: 0.9em;
+    }
 }
 
 .seg-body {
@@ -15,6 +54,13 @@
     width: 0.5em;
 }
 
-.word {
+.word {    
     cursor: pointer;
+    border-radius: 0.2em;
+    display: inline-block;
+    padding: 0.1em;
+
+    $word-distance: 0.2em;
+    margin-left: $word-distance;
+    margin-right: $word-distance;
 }

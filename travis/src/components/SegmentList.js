@@ -6,10 +6,9 @@ function makeSegments(segmentsData) {
         <>
             <Segment
                 key={`seg_${index}`}
-                index={index}
+                segId={index}
                 {...segment}
             />
-            <br/>
         </>         
     ))
 }
