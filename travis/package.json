@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "start:dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -40,9 +41,11 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "file-loader": "^4.2.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "webpack": "^5.0.0-alpha.30",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   }
 }

@@ -10,6 +10,7 @@ export default function Transcript({
             <h1>{name}</h1>
 
             <SegmentList
+                key='seg-list'
                 segments={segments}
             />
         </div>

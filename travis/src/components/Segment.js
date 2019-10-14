@@ -1,6 +1,8 @@
 import Word from './Word'
+import EditSegment from './EditSegment'
 // import $ from 'jquery'
 import { useAudioStatus } from "./audio-status-hooks";
+import {useState} from "react"
 
 
 function makeWords(wordsData, segId) {
@@ -26,6 +28,8 @@ export default function Segment({
     words = []
 }) {
     const { startPlaying } = useAudioStatus();
+    const [editMode, setEditMode] = useState(false)
+
 
     const playAudio = () => {
         startPlaying(startSec, endSec, segId);
@@ -43,7 +47,15 @@ export default function Segment({
                 <span className="seg-speaker">Speaker: {speaker_id} ({speakerType})</span>
             </div>
             <div className="seg-body">
-                {makeWords(words, segId)}
+                <div className="seg-body-orig">
+                    {makeWords(words, segId)}
+                </div>
+                <div className="seg-body-edit" hidden={!editMode}>
+                    <EditSegment words={words} />
+                </div>                
+            </div>
+            <div className="edit-button">
+                <img src="src/pics/icon-edit.png" onClick={() => setEditMode(!editMode)} />
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ import { useAudioStatus } from "./audio-status-hooks";
 export default function Audio({
 
 }) {
-    let url = "sample-transcript/raw.mp3";
+    let url = "dist/input/raw.mp3";
     const { audioStatus, stopPlaying, updatePos } = useAudioStatus();
 
     const handlePlaying = (pos) => {
@@ -31,7 +31,7 @@ export default function Audio({
                     "No segment playing"
                 }
                 <span 
-                    class="seg-audio-stop" 
+                    className="seg-audio-stop" 
                     hidden={!audioStatus.playing}
                     onClick={() => stopPlaying()}
                 >

@@ -171,7 +171,7 @@ if __name__ == '__main__':
     r = recs.bbc_interview.load()
     audio_fpath = r.audio_fpath
 
-    slice_to_s = 30
+    slice_to_s = 120
     run_id = f'{path2id(audio_fpath, level_to=-1)}-{slice_to_s}'
 
     temp_fpath = audiomanip.create_audio_slice_in_temp(

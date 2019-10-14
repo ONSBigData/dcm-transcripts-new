@@ -4,26 +4,26 @@ export default function FileLoader({
     setData = (data) => null
 }) {
     const transcriptInput = useRef(null);
-    // const audioInput = useRef(null);
 
     const onSubmit = (event) => {
         event.preventDefault();
 
+        // transcript
         let transcriptFile = transcriptInput.current.files[0];
         
         let reader = new FileReader();
         reader.onloadend = () => {
-            setData(JSON.parse(reader.result))
+            let json = JSON.parse(reader.result)
+            setData(json);
         }
         reader.readAsText(transcriptFile);
     };
 
     return (
-        <div class="file-load-control control-div">
+        <div className="file-load-control control-div">
             <b>File loading</b>
             <form onSubmit={onSubmit} className="file-load">
                 <label>Transcript: <input type="file" ref={transcriptInput} /></label><br/>
-                {/* <label>Audio: <input type="file" ref={audioInput} /></label><br/> */}
 
                 <button type="submit">Submit</button>
             </form>

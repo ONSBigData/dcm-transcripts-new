@@ -1,0 +1,2 @@
+npm run start:dev
+#./node_modules/http-server/bin/http-server -c-1 dist/

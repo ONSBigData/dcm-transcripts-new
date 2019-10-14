@@ -25,12 +25,17 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
     ]
   },
   plugins: [
     new CopyWebpackPlugin([
       { from: './src/index.html', to: 'index.html' },
-      { from: './src/sample-transcript', to: 'sample-transcript' }
     ])
   ],
   watch: true,

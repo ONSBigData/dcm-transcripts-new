@@ -92,7 +92,31 @@ body {
 
 .seg-body {
     padding-left: 1em;
-    flex: 1;
+    flex: 0 0 70%;
+}
+
+.edit-button {
+    flex: 0 0 7%;
+    text-align: center;
+
+    img {
+        // background-image: url("../pics/icon-edit.png");
+        display: inline-block;
+        width: 1.3em;
+        height: 1.3em;
+        padding: 0.1em;
+        border-radius: 0.2em;
+        cursor: pointer;
+
+        &:hover {
+            background-color: coral;
+        }
+    }
+} 
+
+.edit-area {
+    width: 100%;
+    resize: vertical;
 }
 
 .word-break {
