@@ -3,6 +3,7 @@ import EditSegment from './EditSegment'
 // import $ from 'jquery'
 import { useAudioStatus } from "./audio-status-hooks";
 import {useState} from "react"
+import colorPalette from "./color-array.js"
 
 
 function makeWords(wordsData, segId) {
@@ -20,38 +21,54 @@ function makeWords(wordsData, segId) {
 }
 
 export default function Segment({
-    segId,
+    segIx,
     start_s: startSec,
     end_s: endSec,
     type: speakerType,
     speaker_id,
-    words = []
+    speaker_ix,
+    words = [],
+    edited = null,
+    editSegment=() => {}
 }) {
-    const { startPlaying } = useAudioStatus();
-    const [editMode, setEditMode] = useState(false)
-
+    const { audioStatus, startPlaying, stopPlaying } = useAudioStatus();
+    const [editMode, setEditMode] = useState(edited !== null)
 
     const playAudio = () => {
-        startPlaying(startSec, endSec, segId);
-    }    
+        startPlaying(startSec, endSec, segIx);
+    }
+
+    let styles = {
+        'backgroundColor': colorPalette[speaker_ix]
+    }
 
     return (
-        <div className="segment">
+        <div className="segment" styles={styles}>
             <div className="seg-header">
-                <span className="seg-id">{segId}. </span><br/>
+                <span className="seg-id">{segIx}. </span><br/>
                 <a className="seg-time" onClick={playAudio}>
                     &#9658; {startSec.toFixed(2)}s - {endSec.toFixed(2)}s
                 </a>
                 <br/>
+                <div hidden={!audioStatus.playing || audioStatus.segId !== segIx}>
+                    <a 
+                        className="seg-audio-stop" 
+                        onClick={() => stopPlaying()}
+                    >
+                        &#11035; Stop playing
+                    </a>
+                    <br/>
+                </div>
 
                 <span className="seg-speaker">Speaker: {speaker_id} ({speakerType})</span>
             </div>
             <div className="seg-body">
-                <div className="seg-body-orig">
-                    {makeWords(words, segId)}
+                <div className="seg-body-orig" onDoubleClick={() => setEditMode(!editMode)}>
+                    {makeWords(words, segIx)}
                 </div>
-                <div className="seg-body-edit" hidden={!editMode}>
-                    <EditSegment words={words} />
+                <div className={`seg-body-edit ${editMode ? "" : "seg-body-edit-hidden"}`}>
+                    <hr></hr>
+                    <EditSegment edited={edited} words={words} editSegment={editSegment} />
                 </div>                
             </div>
             <div className="edit-button">

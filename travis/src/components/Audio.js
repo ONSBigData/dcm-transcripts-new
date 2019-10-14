@@ -20,24 +20,8 @@ export default function Audio({
     return (
         <>
             <div className="full-audio-control control-div">
-                <b>Full audio control</b><br/>
+                <b>Full audio</b><br/>
                 <audio id='full-audio' src={url} controls />
-            </div>
-            <div className="seg-audio-control control-div">
-                <b>Segment audio</b><br/>
-                {
-                    audioStatus.playing ? 
-                    `Playing segment ${audioStatus.segId}` : 
-                    "No segment playing"
-                }
-                <span 
-                    className="seg-audio-stop" 
-                    hidden={!audioStatus.playing}
-                    onClick={() => stopPlaying()}
-                >
-                    &#11035;
-                </span>
-                <br/>
             </div>
             <Sound
                 url={url}

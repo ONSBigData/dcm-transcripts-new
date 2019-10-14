@@ -3,27 +3,23 @@ import FileLoader from './FileLoader'
 import Audio from './Audio'
 import { useState, useEffect } from "react";
 import $ from "jquery";
-
-const placeholderTranscript = {
-    "name": "n/aaaaa",
-    "segments": []
-};
+import useTranscriptData from './transcript-data-hooks';
 
 export default function App() {
-    const [trData, setTrData] = useState(placeholderTranscript);
+    const [trData, updateTrData, editSegment] = useTranscriptData();
 
     useEffect(() => {
         $.getJSON("dist/input/final.json", function(json) {
-            setTrData(json);
-        });    
+            updateTrData(json);
+        });
     }, [])
 
     
     return (
         <>
-            {/* <FileLoader setData={setTrData} /> */}
+            {/* <FileLoader updateTrData={updateTrData} /> */}
             <Audio />
-            <Transcript {...trData}/>
+            <Transcript trData={trData} editSegment={editSegment}/>
         </>
     );
   }

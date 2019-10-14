@@ -19,6 +19,9 @@ export default function Word({
         var color = scale(confidence);
         style['backgroundColor'] = color.alpha(hovered ? 0.8 : 0.3).hex();
     }
+    else {
+        style['marginLeft'] = '-0.2em';
+    }
 
     //-------------- Rendering
 
