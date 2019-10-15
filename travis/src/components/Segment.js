@@ -1,9 +1,8 @@
 import Word from './Word'
 import EditSegment from './EditSegment'
-// import $ from 'jquery'
 import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 import {useState} from "react"
-import colorPalette from "./color-array.js"
+import colorPalette from "../helpers/color-array.js"
 
 
 function makeWords(wordsData, segId) {

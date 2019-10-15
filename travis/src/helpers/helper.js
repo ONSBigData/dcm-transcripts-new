@@ -14,5 +14,3 @@ export function textFromWords(words) {
 
     return text;
 };
-
-// export default [textFromWords];

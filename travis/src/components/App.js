@@ -17,7 +17,7 @@ export default function App() {
     
     return (
         <>
-            {/* <FileLoader updateTrData={updateTrData} /> */}
+            <FileLoader updateTrData={loadTrData} />
             <Audio />
             <Transcript trData={trData} editSegment={editSegment}/>
         </>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {textFromWords} from '../helper.js'
+import {textFromWords} from '../helpers/helper.js'
 
 export default function EditSegment({
     editSegment,

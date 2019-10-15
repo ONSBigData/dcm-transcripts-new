@@ -1,5 +1,5 @@
 import Segment from './Segment'
-import {textFromWords} from '../helper.js'
+import {textFromWords} from '../helpers/helper.js'
 
 
 export default function Transcript({

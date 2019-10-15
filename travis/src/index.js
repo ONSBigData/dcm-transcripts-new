@@ -14,3 +14,7 @@ render(
     </AudioStatusProvider>
     , document.getElementById("react-container")   
 )
+
+window.onbeforeunload = function() {
+    return "Are you sure?";
+}
