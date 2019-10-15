@@ -36,7 +36,8 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       { from: './src/index.html', to: 'index.html' },
-    ])
+      { from: './src/pics', to: 'pics' },
+    ]),
   ],
   watch: true,
   devtool: "#source-map" 

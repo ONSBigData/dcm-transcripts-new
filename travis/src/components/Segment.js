@@ -71,7 +71,7 @@ export default function Segment({
                 </div>                
             </div>
             <div className="edit-button">
-                <img src="src/pics/icon-edit.png" onClick={() => setEditMode(!editMode)} />
+                <img src="pics/icon-edit.png" onClick={() => setEditMode(!editMode)} />
             </div>
         </div>
     )

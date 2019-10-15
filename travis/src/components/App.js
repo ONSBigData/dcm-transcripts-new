@@ -9,7 +9,7 @@ export default function App() {
     const [trData, loadTrData, editSegment] = useTranscriptData();
 
     useEffect(() => {
-        $.getJSON("dist/input/final.json", function(json) {
+        $.getJSON("input/final.json", function(json) {
             loadTrData(json);
         });
     }, [])
@@ -17,7 +17,7 @@ export default function App() {
     
     return (
         <>
-            <FileLoader updateTrData={loadTrData} />
+            {/* <FileLoader updateTrData={loadTrData} /> */}
             <Audio />
             <Transcript trData={trData} editSegment={editSegment}/>
         </>

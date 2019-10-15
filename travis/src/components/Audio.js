@@ -5,7 +5,7 @@ import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 export default function Audio({
 
 }) {
-    let url = "dist/input/raw.mp3";
+    let url = "input/raw.mp3";
     const { audioStatus, stopPlaying, updatePos } = useAudioStatus();
 
     const handlePlaying = (pos) => {
