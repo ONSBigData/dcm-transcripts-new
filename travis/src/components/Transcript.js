@@ -1,10 +1,16 @@
 import Segment from './Segment'
+import {textFromWords} from '../helper.js'
+
 
 export default function Transcript({
     trData,
     editSegment
 }) {
-    let {name, no_speakers: noSpeakers, segments} = trData;
+    let {
+        name, 
+        no_speakers: noSpeakers, 
+        segments
+    } = trData;
     
     const saveTranscriptJson = () => {
         var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trData));
@@ -15,10 +21,32 @@ export default function Transcript({
     };
 
     const exportTranscript = () => {
-        var dataStr = "data:text/plain;charset=utf-8," + encodeURIComponent(trData);
+        var rows = [
+            `Transcript ID: ${trData.name}`,
+            `=================================================`,
+            `* No. speakers: ${noSpeakers >= 0 ? noSpeakers : 'unknown'}`,
+            '',
+            ''
+        ];
+
+        trData['segments'].forEach((s, i) => {
+            rows.push(`Segment ${i}`);
+            rows.push(`---------------------------------------`);
+            rows.push(`* ${s['start_s'].toFixed(2)}s - ${s['end_s'].toFixed(2)}s`);
+            rows.push(`* Speaker ID: ${typeof s['speaker_id'] !== 'undefined' ? s['speaker_id'] : 'unknown'}`);
+            rows.push(`* Type: ${typeof s['type'] !== 'undefined' ? s['type'] : 'unknown'}`);
+            rows.push('');
+
+            let text = typeof s['edited'] !== 'undefined' ? s['edited'] : textFromWords(s['words']);
+            rows.push(text);
+            rows.push('');
+            rows.push('');
+        });
+
+        var dataStr = "data:text/text;charset=utf-8," + encodeURIComponent(rows.join('\n'));
         var dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href", dataStr);
-        dlAnchorElem.setAttribute("download", "final.txt");
+        dlAnchorElem.setAttribute("download", "final.md");
         dlAnchorElem.click();
     };
 
@@ -42,8 +70,8 @@ export default function Transcript({
 
             <a id="downloadAnchorElem"></a>
 
-            <a className="save-export" onClick={saveTranscriptJson}>Save transcript JSON</a>
-            <a className="save-export" onClick={exportTranscript}>Export transcript</a>
+            <a className="save-export" onClick={saveTranscriptJson}>Save transcript as JSON</a>
+            <a className="save-export" onClick={exportTranscript}>Export transcript as Markdown</a>
 
             <div className="segment-list">
                 { segments.length === 0 ? (

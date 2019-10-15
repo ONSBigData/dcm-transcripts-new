@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 export default function FileLoader({
-    updateTrData = () => null
+    loadTrData = () => null
 }) {
     const transcriptInput = useRef(null);
 
@@ -14,7 +14,7 @@ export default function FileLoader({
         let reader = new FileReader();
         reader.onloadend = () => {
             let json = JSON.parse(reader.result)
-            updateTrData(json);
+            loadTrData(json);
         }
         reader.readAsText(transcriptFile);
     };

@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { render } from "react-dom";
 import App from './components/App'
 import './css/styles.scss';
-import { AudioStatusProvider } from "./components/audio-status-hooks.js";
+import { AudioStatusProvider } from "./hooks/audio-status-hooks.js";
 
 
 window.React = React;

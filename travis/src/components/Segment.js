@@ -1,7 +1,7 @@
 import Word from './Word'
 import EditSegment from './EditSegment'
 // import $ from 'jquery'
-import { useAudioStatus } from "./audio-status-hooks";
+import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 import {useState} from "react"
 import colorPalette from "./color-array.js"
 
@@ -28,11 +28,11 @@ export default function Segment({
     speaker_id,
     speaker_ix,
     words = [],
-    edited = null,
+    edited,
     editSegment=() => {}
 }) {
     const { audioStatus, startPlaying, stopPlaying } = useAudioStatus();
-    const [editMode, setEditMode] = useState(edited !== null)
+    const [editMode, setEditMode] = useState(typeof edited !== 'undefined')
 
     const playAudio = () => {
         startPlaying(startSec, endSec, segIx);

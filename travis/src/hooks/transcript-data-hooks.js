@@ -8,7 +8,7 @@ const placeholderTranscript = {
 export default function useTranscriptData() {
     const [trData, setTrData] = useState(placeholderTranscript);
 
-    const updateTrData = (json) => {
+    const loadTrData = (json) => {
         let speakerIds = json.segments.map((s) => s['speaker_id']);
         speakerIds = new Set(speakerIds);
         
@@ -32,5 +32,5 @@ export default function useTranscriptData() {
         setTrData(newTrData);
     };
 
-    return [trData, updateTrData, editSegment]
+    return [trData, loadTrData, editSegment]
 };

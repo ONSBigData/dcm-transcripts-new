@@ -1,5 +1,5 @@
 import Sound from 'react-sound';
-import { useAudioStatus } from "./audio-status-hooks";
+import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 
 
 export default function Audio({

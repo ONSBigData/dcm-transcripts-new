@@ -1,26 +1,12 @@
 import { useState, useEffect } from "react";
+import {textFromWords} from '../helper.js'
 
 export default function EditSegment({
     editSegment,
     words = [],
-    edited = null
+    edited
 }) {
-    let defText = '';
-    if (edited !== null) {
-        defText = edited;
-    }
-    else {
-        words.forEach((word, i) => {
-            let others = word['others'] ? word['others'] : {};
-            let isPunct = ('type' in others) && (others['type'] == 'punctuation');
-    
-            if (i > 0 && !isPunct) {
-                defText += ' ';
-            }
-
-            defText += word['word'];
-        })
-    }
+    let defText = typeof edited !== 'undefined' ? edited : textFromWords(words);
 
     const [saved, setSaved] = useState(true);
 
@@ -30,9 +16,8 @@ export default function EditSegment({
                 className={`edit-area ${!saved ? 'edit-area-unsaved' : ''}`}
                 defaultValue={defText} 
                 rows={4} 
+                onChange={() => setSaved(false)}
                 onKeyPress={(e) => {
-                    setSaved(false);
-
                    if (e.key === 'Enter' && e.ctrlKey) {
                         editSegment(e.target.value);
                         setSaved(true);
