@@ -5,7 +5,7 @@ import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 export default function Audio({
 
 }) {
-    let url = "https://drive.google.com/open?id=1HBu9si8Iv-j_NmuN8PjSJoYdToHViFDZ";
+    let url = "input/raw.mp3";
     const { audioStatus, stopPlaying, updatePos } = useAudioStatus();
 
     const handlePlaying = (pos) => {

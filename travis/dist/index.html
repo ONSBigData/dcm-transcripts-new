@@ -18,12 +18,19 @@
 </head>
 
 <body>
-    <form action="transcribe.html" method="get">
-        <input name="audio-url" type="text" value="input/raw.mp3"/>
+    <form class='inputs' action="transcribe.html" method="get">
+        <label>
+            Audio (mp3) file url <br/>
+            <input name="audio-url" type="text" value="input/raw.mp3"/>
+        </label>
         <br/>
-        <input name="transcript-url" type="text" value="input/final.json"/>
+        <label>
+            Transcript (json) file url <br/>
+            <input name="transcript-url" type="text" value="input/final.json"/>
+        </label>
         <br/>
         <input type="submit" />
     </form>
+    <script src="bundle.js"></script>
 </body>
 </html>
