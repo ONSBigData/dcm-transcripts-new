@@ -8,12 +8,14 @@ import { AudioStatusProvider } from "./hooks/audio-status-hooks.js";
 
 window.React = React;
 
-render(
-    <AudioStatusProvider>
-        <App />
-    </AudioStatusProvider>
-    , document.getElementById("react-container")   
-)
+if (document.getElementById("react-container")) {
+    render(
+        <AudioStatusProvider>
+            <App />
+        </AudioStatusProvider>
+        , document.getElementById("react-container")   
+    )    
+}
 
 window.onbeforeunload = function() {
     return "Are you sure?";

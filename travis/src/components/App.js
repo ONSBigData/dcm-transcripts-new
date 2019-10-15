@@ -4,12 +4,14 @@ import Audio from './Audio'
 import { useState, useEffect } from "react";
 import $ from "jquery";
 import useTranscriptData from '../hooks/transcript-data-hooks';
+import {getUrlParameter} from "../helpers/helper.js"    
 
 export default function App() {
     const [trData, loadTrData, editSegment] = useTranscriptData();
 
     useEffect(() => {
-        $.getJSON("input/final.json", function(json) {
+        let jsonUrl = getUrlParameter('transcript-url', "input/final.json");
+        $.getJSON(jsonUrl, function(json) {
             loadTrData(json);
         });
     }, [])

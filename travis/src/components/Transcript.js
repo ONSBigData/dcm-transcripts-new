@@ -52,14 +52,12 @@ export default function Transcript({
 
     const makeSegments = (segmentsData) => {
         return segmentsData.map((segment, index) => (
-            <>
-                <Segment
-                    key={`seg_${index}`}
-                    segIx={index}
-                    editSegment={(text) => editSegment(index, text)}
-                    {...segment}
-                />
-            </>         
+            <Segment
+                key={`seg_${index}`}
+                segIx={index}
+                editSegment={(text) => editSegment(index, text)}
+                {...segment}
+            />
         ))
     }
 

@@ -1,11 +1,12 @@
 import Sound from 'react-sound';
 import { useAudioStatus } from "../hooks/audio-status-hooks.js";
+import {getUrlParameter} from "../helpers/helper.js"
 
 
 export default function Audio({
 
 }) {
-    let url = "input/raw.mp3";
+    let url = getUrlParameter('audio-url', 'input/raw.mp3');
     const { audioStatus, stopPlaying, updatePos } = useAudioStatus();
 
     const handlePlaying = (pos) => {

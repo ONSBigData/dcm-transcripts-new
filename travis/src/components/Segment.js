@@ -9,13 +9,11 @@ function makeWords(wordsData, segId) {
     var getWordId = (index) => `w_${segId}_${index}`;
 
     return wordsData.map((word, index) => (
-        <>
-            <Word
-                key={getWordId(index)}
-                wordId={getWordId(index)}
-                {...word}
-            />
-        </>         
+        <Word
+            key={getWordId(index)}
+            wordId={getWordId(index)}
+            {...word}
+        />
     ))
 }
 
