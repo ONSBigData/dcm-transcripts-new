@@ -10,6 +10,28 @@ body {
     line-height: 1.3em;
 }
 
+.inputs {
+    padding: 2px;
+
+    label {
+        font-size: 0.8em;
+    }
+
+    input {
+        margin: 0.4em;
+    }
+}
+
+.back-to-index {
+    display: inline-block;
+    padding: 0.2em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: coral;
+    }
+}
+
 .control-div {
     border: thin solid gray;
     margin: 0.2em;

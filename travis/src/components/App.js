@@ -17,6 +17,7 @@ export default function App() {
     
     return (
         <>
+            <a href="index.html" className="back-to-index">Back</a>
             {/* <FileLoader updateTrData={loadTrData} /> */}
             <Audio />
             <Transcript trData={trData} editSegment={editSegment}/>
