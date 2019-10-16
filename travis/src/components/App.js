@@ -1,17 +1,17 @@
 import Transcript from './Transcript'
-import FileLoader from './FileLoader'
 import Audio from './Audio'
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import $ from "jquery";
 import useTranscriptData from '../hooks/transcript-data-hooks';
-import {getUrlParameter} from "../helpers/helper.js"    
 
-export default function App() {
+export default function App({
+    transcriptUrl,
+    audioUrl
+}) {
     const [trData, loadTrData, editSegment] = useTranscriptData();
 
     useEffect(() => {
-        let jsonUrl = getUrlParameter('transcript-url', "input/final.json");
-        $.getJSON(jsonUrl, function(json) {
+        $.getJSON(transcriptUrl, function(json) {
             loadTrData(json);
         });
     }, [])
@@ -20,8 +20,7 @@ export default function App() {
     return (
         <>
             <a href="index.html" className="back-to-index">Back</a>
-            {/* <FileLoader updateTrData={loadTrData} /> */}
-            <Audio />
+            <Audio audioUrl={audioUrl}/>
             <Transcript trData={trData} editSegment={editSegment}/>
         </>
     );

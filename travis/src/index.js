@@ -1,19 +1,15 @@
 import React from "react";
-import { createContext } from "react";
 import { render } from "react-dom";
-import App from './components/App'
 import './css/styles.scss';
-import { AudioStatusProvider } from "./hooks/audio-status-hooks.js";
+import FileLoader from './components/FileLoader'
 
 
 window.React = React;
 
-if (document.getElementById("react-container")) {
+if (document.getElementById("react-file-load-container")) {
     render(
-        <AudioStatusProvider>
-            <App />
-        </AudioStatusProvider>
-        , document.getElementById("react-container")   
+        <FileLoader />
+        , document.getElementById("react-file-load-container")   
     )    
 }
 

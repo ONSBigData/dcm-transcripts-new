@@ -39,7 +39,6 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       { from: './src/index.html', to: 'index.html' },
-      { from: './src/transcribe.html', to: 'transcribe.html' },
       { from: './src/pics', to: 'pics' },
     ]),
   ],
