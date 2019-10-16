@@ -1,3 +1,7 @@
+## Usage
+
+- TraVis tool: https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/
+
 ## Installation
 
 The basic structure of this project is:
