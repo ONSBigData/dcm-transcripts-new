@@ -18,7 +18,10 @@ export default function EditSegment({
                 rows={4} 
                 onChange={() => setSaved(false)}
                 onKeyPress={(e) => {
-                   if (e.key === 'Enter' && e.ctrlKey) {
+                    let shouldSave = ((e.key === 'Enter') && e.ctrlKey);
+                    shouldSave = shouldSave || ((e.keyCode == 13) && e.ctrlKey);
+
+                    if (e.key === 'Enter' && e.ctrlKey) {
                         editSegment(e.target.value);
                         setSaved(true);
                     }
