@@ -1,5 +1,7 @@
 import Segment from './Segment'
 import {textFromWords} from '../helpers/helper.js'
+import { useState } from "react";
+
 
 
 export default function Transcript({
@@ -11,9 +13,16 @@ export default function Transcript({
         no_speakers: noSpeakers, 
         segments
     } = trData;
+
+    const [selectedSpeakerId, setSelectedSpeakerId] = useState(null);
     
     const saveTranscriptJson = () => {
-        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trData));
+        var data = {...trData};
+        data['segments'] = data['segments'].filter((s) => (
+            ((selectedSpeakerId === null) || (selectedSpeakerId === s.speaker_id))
+        ));
+
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
         var dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href", dataStr);
         dlAnchorElem.setAttribute("download", "final-checkpoint.json");
@@ -30,6 +39,10 @@ export default function Transcript({
         ];
 
         trData['segments'].forEach((s, i) => {
+            if ((selectedSpeakerId !== null) && (selectedSpeakerId !== s.speaker_id)) {
+                return;
+            }
+
             rows.push(`Segment ${i}`);
             rows.push(`---------------------------------------`);
             rows.push(`* ${s['start_s'].toFixed(2)}s - ${s['end_s'].toFixed(2)}s`);
@@ -55,6 +68,8 @@ export default function Transcript({
             <Segment
                 key={`seg_${index}`}
                 segIx={index}
+                selectedSpeakerId={selectedSpeakerId}
+                setSelectedSpeakerId={setSelectedSpeakerId}
                 editSegment={(text) => editSegment(index, text)}
                 {...segment}
             />

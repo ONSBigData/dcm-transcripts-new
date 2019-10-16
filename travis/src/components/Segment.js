@@ -19,11 +19,13 @@ function makeWords(wordsData, segId) {
 
 export default function Segment({
     segIx,
+    selectedSpeakerId,
+    setSelectedSpeakerId,
     start_s: startSec,
     end_s: endSec,
     type: speakerType,
-    speaker_id,
-    speaker_ix,
+    speaker_id: speakerId,
+    speaker_ix: speakerIx,
     words = [],
     edited,
     editSegment=() => {}
@@ -36,15 +38,18 @@ export default function Segment({
     }
 
     let styles = {
-        'backgroundColor': colorPalette[speaker_ix] + '30'
+        'backgroundColor': colorPalette[speakerIx] + '60'
     }
 
+    let display = (selectedSpeakerId !== null) && (selectedSpeakerId !== speakerId) ? 'none' : 'flex';
+
     return (
-        <div className="segment" style={styles}>
+        <div className="segment" style={{'display': display}}>
             <div className="seg-header">
                 <span className="seg-id">{segIx}. </span><br/>
                 <a className="seg-time" onClick={playAudio}>
                     &#9658; {startSec.toFixed(2)}s - {endSec.toFixed(2)}s
+                    
                 </a>
                 <br/>
                 <div hidden={!audioStatus.playing || audioStatus.segId !== segIx}>
@@ -57,7 +62,15 @@ export default function Segment({
                     <br/>
                 </div>
 
-                <span className="seg-speaker">Speaker: {speaker_id} ({speakerType})</span>
+                <span 
+                    style={styles} 
+                    className="seg-speaker"
+                    onClick={() => {
+                        setSelectedSpeakerId(selectedSpeakerId !== null ? null : speakerId)
+                    }}
+                >
+                    Speaker: {speakerId} ({speakerType})
+                </span>
             </div>
             <div className="seg-body">
                 <div className="seg-body-orig" onDoubleClick={() => setEditMode(!editMode)}>

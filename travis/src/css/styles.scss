@@ -124,6 +124,13 @@ body {
 
     .seg-speaker {
         font-size: 0.9em;
+        cursor: pointer;
+        border-radius: 0.2em;
+        padding: 0.1em;
+
+        &:hover {
+            background-color: coral !important;
+        }
     }
 }
 
