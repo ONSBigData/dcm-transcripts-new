@@ -36,11 +36,11 @@ export default function Segment({
     }
 
     let styles = {
-        'backgroundColor': colorPalette[speaker_ix]
+        'backgroundColor': colorPalette[speaker_ix] + '30'
     }
 
     return (
-        <div className="segment" styles={styles}>
+        <div className="segment" style={styles}>
             <div className="seg-header">
                 <span className="seg-id">{segIx}. </span><br/>
                 <a className="seg-time" onClick={playAudio}>
