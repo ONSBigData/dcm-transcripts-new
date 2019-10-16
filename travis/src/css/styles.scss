@@ -22,6 +22,18 @@ body {
     }
 }
 
+.see-example {
+    margin-top: 0.5em;
+    border: solid 2px black;
+    display: inline-block;
+    padding: 0.2em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: coral;
+    }
+}
+
 .back-to-index {
     display: inline-block;
     padding: 0.2em;

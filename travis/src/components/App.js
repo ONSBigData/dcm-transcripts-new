@@ -19,7 +19,7 @@ export default function App({
     
     return (
         <>
-            <a href="index.html" className="back-to-index">Back</a>
+            <a href="index.html" className="back-to-index">Choose new files</a>
             <Audio audioUrl={audioUrl}/>
             <Transcript trData={trData} editSegment={editSegment}/>
         </>

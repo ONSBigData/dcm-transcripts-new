@@ -23,6 +23,8 @@ export default function FileLoader({
         window.onbeforeunload = function() {
             return "Are you sure?";
         }
+
+        document.getElementById('react-file-load-container').hidden = true;
     }
 
     const onSubmit = (event) => {
@@ -57,6 +59,7 @@ export default function FileLoader({
 
                 <button type="submit">Submit</button>
             </form>
+            <span className="see-example" onClick={() => renderTranscriptReact('input/final.json', 'input/raw.mp3')}>See example</span>
         </div>
     );    
 }
