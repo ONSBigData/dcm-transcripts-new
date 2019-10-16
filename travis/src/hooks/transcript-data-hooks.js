@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const placeholderTranscript = {
-    "name": "n/aaaaa",
+    "name": "n/a",
     "segments": []
 };
 

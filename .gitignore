@@ -5,5 +5,3 @@ __pycache__
 dcm-iw-transcripts*.json
 Pipfile
 travis/node_modules
-travis/dist/input
-!travis/dist/input/readme.txt

@@ -1,6 +1,6 @@
 ## Usage
 
-- TraVis tool: https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/
+- TraVis tool: (https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/)
 
 ## Installation
 
