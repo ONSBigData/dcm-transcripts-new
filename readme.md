@@ -1,6 +1,6 @@
 ## Usage
 
-- TraVis tool: [](https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/)
+- [TraVis tool](https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/)
 
 ## Installation
 
@@ -55,24 +55,24 @@ Then unzip and move the recordings folder to the `data` folder. I.e.:
     * package for audio analysis, feature extraction etc.
     * "provides the building blocks necessary to create music information
     retrieval systems".
-    * [](https://librosa.github.io/librosa/)
+    * [link](https://librosa.github.io/librosa/)
 * pydub
     * audio manipulation. E.g `audio[30000:59000].export(...)` and things like that
-    * [](https://github.com/jiaaro/pydub)
+    * [link](https://github.com/jiaaro/pydub)
 * speechrecognition
     * package for speech reco. Is more of a unified wrapper for several APIs
     * not sure we will use much
-    * [](https://realpython.com/python-speech-recognition/)
+    * [link](https://realpython.com/python-speech-recognition/)
 * inaSpeechSegmenter
     * Neural network based segmentation tool. Works nicely!
     * Needs Tensorflow and ffmpeg
-    * [](https://github.com/ina-foss/inaSpeechSegmenter))
+    * [link](https://github.com/ina-foss/inaSpeechSegmenter))
 * pyAudioAnalysis
     * another one for feature extraction, segmentation, classification...
     * this one has diarization too. Does not work too well, but the methodology
     seems sound.
-        * [](https://github.com/tyiannak/pyAudioAnalysis/wiki)
-        * paper - [](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144610)
+        * [link](https://github.com/tyiannak/pyAudioAnalysis/wiki)
+        * paper - [link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144610)
 * google-cloud-speech
     * the python API for GCP speech2text
     * currently, I use a test tier on GCP where I put my own debit card
