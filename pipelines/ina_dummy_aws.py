@@ -168,10 +168,11 @@ if __name__ == '__main__':
     import recordings.recs as recs
     import support.audiomanip as audiomanip
 
-    r = recs.dcm_test_iws.load_all()[0]
+    # r = recs.dcm_test_iws.load_all()[0]
+    r = recs.bbc_interview.load()
     audio_fpath = r.audio_fpath
 
-    slice_to_s = 300
+    slice_to_s = 60
     run_id = f'{path2id(audio_fpath, level_to=-1)}-{slice_to_s}'
 
     temp_fpath = audiomanip.create_audio_slice_in_temp(

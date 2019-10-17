@@ -59,7 +59,7 @@ export default function FileLoader({
 
                 <button type="submit">Submit</button>
             </form>
-            <span className="see-example" onClick={() => renderTranscriptReact('input/final.json', 'input/raw.mp3')}>See example</span>
+            <span className="see-example" onClick={() => renderTranscriptReact('input/final.json', 'input/raw')}>See example</span>
         </div>
     );    
 }
