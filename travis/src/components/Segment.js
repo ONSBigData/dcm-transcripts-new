@@ -3,6 +3,7 @@ import EditSegment from './EditSegment'
 import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 import {useState} from "react"
 import colorPalette from "../helpers/color-array.js"
+import {textFromWords} from '../helpers/helper.js'
 
 
 function makeWords(wordsData, segId) {
@@ -31,7 +32,10 @@ export default function Segment({
     editSegment=() => {}
 }) {
     const { audioStatus, startPlaying, stopPlaying } = useAudioStatus();
-    const [editMode, setEditMode] = useState(typeof edited !== 'undefined')
+    const [editMode, setEditMode] = useState(typeof edited !== 'undefined');
+
+    let initEditBoxText = typeof edited !== 'undefined' ? edited : textFromWords(words);
+    const [editBoxText, setEditBoxText] = useState(initEditBoxText);
 
     const playAudio = () => {
         startPlaying(startSec, endSec, segIx);
@@ -78,11 +82,17 @@ export default function Segment({
                 </div>
                 <div className={`seg-body-edit ${editMode ? "" : "seg-body-edit-hidden"}`}>
                     <hr></hr>
-                    <EditSegment edited={edited} words={words} editSegment={editSegment} />
+                    <EditSegment 
+                        initEditBoxText={initEditBoxText}
+                        editSegment={editSegment}
+                        editBoxText={editBoxText} 
+                        setEditBoxText={setEditBoxText}
+                    />
                 </div>                
             </div>
             <div className="edit-button">
-                <img src="pics/icon-edit.png" onClick={() => setEditMode(!editMode)} />
+                <img src="pics/icon-edit.png" onClick={() => setEditMode(!editMode)} /><br/>
+                <img src="pics/icon-accept.png" onClick={() => editSegment(editBoxText)} /><br/>
             </div>
         </div>
     )

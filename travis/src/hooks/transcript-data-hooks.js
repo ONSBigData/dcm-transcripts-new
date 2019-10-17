@@ -1,4 +1,6 @@
 import { useState } from "react";
+import update from 'immutability-helper';
+
 
 const placeholderTranscript = {
     "name": "n/a",
@@ -26,8 +28,18 @@ export default function useTranscriptData() {
     };
 
     const editSegment = (segIndex, editedText) => {
-        let newTrData = {...trData};
-        newTrData['segments'][segIndex]['edited'] = editedText;
+        const newTrData = update(
+            trData, 
+            {
+                segments: {
+                    [segIndex]: {
+                        edited: {
+                            $set: editedText
+                        }
+                    }
+                }
+            }
+        );
 
         setTrData(newTrData);
     };

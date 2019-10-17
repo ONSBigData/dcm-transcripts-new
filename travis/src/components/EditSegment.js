@@ -1,31 +1,25 @@
 import { useState, useEffect } from "react";
-import {textFromWords} from '../helpers/helper.js'
 
 export default function EditSegment({
+    initEditBoxText,
     editSegment,
-    words = [],
-    edited
+    editBoxText,
+    setEditBoxText
 }) {
-    let defText = typeof edited !== 'undefined' ? edited : textFromWords(words);
-
-    const [saved, setSaved] = useState(true);
-
     return (
         <div className="edit-segment">
             <textarea 
-                className={`edit-area ${!saved ? 'edit-area-unsaved' : ''}`}
-                defaultValue={defText} 
+                className={`edit-area ${editBoxText !== initEditBoxText ? 'edit-area-unsaved' : ''}`}
+                defaultValue={initEditBoxText} 
                 rows={4} 
-                onChange={() => setSaved(false)}
+                onChange={(e) => setEditBoxText(e.target.value)}
                 onKeyPress={(e) => {
                     e.persist();
-                    console.log(e);
                     let shouldSave = ((e.key === 'Enter') && e.ctrlKey);
                     shouldSave = shouldSave || ((e.keyCode == 13) && e.ctrlKey);
 
                     if (shouldSave) {
-                        editSegment(e.target.value);
-                        setSaved(true);
+                        editSegment(editBoxText);
                     }
                 }}
             />
