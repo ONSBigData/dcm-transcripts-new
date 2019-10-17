@@ -4,6 +4,7 @@ import { useAudioStatus } from "../hooks/audio-status-hooks.js";
 import {useState} from "react"
 import colorPalette from "../helpers/color-array.js"
 import {textFromWords} from '../helpers/helper.js'
+import ReactTooltip from 'react-tooltip'
 
 
 function makeWords(wordsData, segId) {
@@ -91,8 +92,33 @@ export default function Segment({
                 </div>                
             </div>
             <div className="edit-button">
-                <img src="pics/icon-edit.png" onClick={() => setEditMode(!editMode)} /><br/>
-                <img src="pics/icon-accept.png" onClick={() => editSegment(editBoxText)} /><br/>
+                <ReactTooltip 
+                    key={`${segIx}_edit`}
+                    id={`${segIx}_edit`} 
+                    aria-haspopup='true'
+                >
+                    {editMode ? 'Close' : 'Open'} edit mode
+                </ReactTooltip>
+                <img 
+                    src="pics/icon-edit.png" 
+                    onClick={() => setEditMode(!editMode)} 
+                    data-tip 
+                    data-for={`${segIx}_edit`}
+                />
+                <br/>
+                <ReactTooltip 
+                    key={`${segIx}_accept`}
+                    id={`${segIx}_accept`} 
+                    aria-haspopup='true'
+                >
+                    Save changes
+                </ReactTooltip>
+                <img 
+                    src="pics/icon-accept.png" 
+                    onClick={() => editSegment(editBoxText)} 
+                    data-tip 
+                    data-for={`${segIx}_accept`}
+                />
             </div>
         </div>
     )
