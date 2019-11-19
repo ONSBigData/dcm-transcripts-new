@@ -5,3 +5,4 @@ __pycache__
 dcm-iw-transcripts*.json
 Pipfile
 travis/node_modules
+pyAudioAnalysis

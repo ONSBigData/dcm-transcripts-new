@@ -7,7 +7,7 @@ jupyterlab
 pip
 setuptools
 wheel
-pocketsphinx
+#pocketsphinx
 pandas
 tensorflow
 # tensorflow-gpu
