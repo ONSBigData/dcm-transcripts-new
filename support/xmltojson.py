@@ -69,7 +69,7 @@ def process_mrt_files(mrt_path):
 
                 segment["words"].append(word)
         else:
-            segment["type"] = "NotAvailable"
+            segment["type"] = "noEnergy"
 
         json_transcript["segments"].append(segment)
 

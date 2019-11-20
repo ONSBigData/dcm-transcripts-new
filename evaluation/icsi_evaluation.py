@@ -46,15 +46,16 @@ def compare_full_text(original_transcript, auto_transcript):
         blob = ""
 
         for seg in transcript["segments"]:
-            for word in seg["words"]:
-                if word["others"]["type"] == "pronunciation":
-                    blob += f" {word['word']}"
-                elif word["others"]["type"] == "punctuation":
-                    blob += f"{word['word']}"
+            if seg["words"]:
+                for word in seg["words"]:
+                    if word["others"]["type"] == "pronunciation":
+                        blob += f" {word['word']}"
+                    elif word["others"]["type"] == "punctuation":
+                        blob += f"{word['word']}"
+                blob = blob.strip()
+                blob += " \n"
 
-            blob += "\n"
-
-        return blob
+        return blob.strip()
 
     original_blob = _create_blob(original_transcript)
     auto_blob = _create_blob(auto_transcript)
@@ -69,7 +70,7 @@ def compare_full_text(original_transcript, auto_transcript):
         f.write(auto_blob)
 
     print("Computing Levenshtein distance")
-    distance = editdist.levenshtein(original_blob.strip(), auto_blob.strip())
+    distance = editdist.levenshtein(original_blob, auto_blob)
 
     return distance
 
@@ -79,7 +80,7 @@ def compare_diarization(original_transcript, auto_transcript):
 
 
 def load_transcripts():
-    with open(f"{ORIGINAL_DIR}/Bdb001.json", "r") as read_file:
+    with open(f"{ORIGINAL_DIR}/Bdb001_trimmed.json", "r") as read_file:
         original_transcript = json.load(read_file)
 
     with open(f"{AUTO_DIR}/final.json", "r") as read_file:
