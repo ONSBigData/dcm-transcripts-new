@@ -16,6 +16,7 @@ def get_mrt_files(path):
     return file_names
 
 
+# TODO: Clean up processing function
 def process_mrt_files(mrt_path):
     json_transcript = {
         "name": None,
