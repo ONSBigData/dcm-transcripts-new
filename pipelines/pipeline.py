@@ -28,7 +28,6 @@ class Pipeline:
 
     def clear_pipeline_dir(self):
         files = glob.glob(f'{self.pipeline_dir}/*')
-        print(files)
         for f in files:
             if f == self.raw_fpath:
                 continue
