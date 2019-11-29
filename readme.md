@@ -38,6 +38,10 @@ file would be created, containing all the information from the process.
 
 The `raw.mp3` and `final.json` are then inputs for TraVis app.
 
+Finally, Huw Fulcher started some work on evaluating the current transcription
+based on the ICSI dataset (containing recordings and manually created
+precise transcripts). See the `evaluation` folder.
+
 ## Installation
 
 The basic structure of this project is:
