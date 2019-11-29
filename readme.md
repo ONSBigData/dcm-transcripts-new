@@ -8,7 +8,26 @@ This repo contains code for two main parts:
   - TraVis is a web app, written in JavaScript, using React, CSS, HTML ... (no Python)
   - TraVis is hosted on GitHub pages for this repo - https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/index.html 
 
+
 # TraGen
+
+TraGen - Transcript Generator, is written in Python.
+
+It is not only about generating transcripts, but also about evaluating
+the segmentation, diarization and transcription.
+
+The main idea is that we have implementations of:
+- segmentation
+- diarization
+- transcription
+
+All of these can then be chained to form a *pipeline*, e.g. the only working
+implemented pipeline is "ina-dummy-aws", meaning
+- INA speech segmenting
+- dummy diarization (diarizing only based on sex information from INA)
+- AWS transcribing
+
+The file `ina_dummy_aws.py` can then be simply run (given correct setup
 
 ## Installation
 
@@ -38,7 +57,9 @@ So start off by creating the root folder and the src & data folders. Then
     https://stackoverflow.com/a/44612200/1913724
     * ffmpeg is used by https://github.com/ina-foss/inaSpeechSegmenter -
     audio segmenting package
-
+* the project also needs to be setup to be able to connect to AWS. After installing boto3 package, one
+should be able to do this from the command line. (same for GCP cloud, although that one is not used
+by this solution at the moment)
 
 Alternative to pipenv is virtualenv:
 * `virtualenv --system-site-packages -p python3 ../venv` - create a new virtual env
@@ -88,5 +109,19 @@ Then unzip and move the recordings folder to the `data` folder. I.e.:
     
 # TraVis
 
-## Installation
+The TraVis - Transcript Visualiser - is a JavaScript web app based on React.
 
+Using React makes for a nice file structure that easily corresponds to the
+visuals on the [webpage](https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/index.html)
+
+It is recommended to use VS code to develop this app.
+
+
+## Installation & run
+
+The dependencies are managed via NPM. Thus going into the `travis` dir, one should:
+- install the packages with `npm install`
+- run with `bash run-dev.sh` and access the app in the browser
+
+The solution uses Webpack to build the final `bundle.js`, compile SCSS
+stylesheets etc.
