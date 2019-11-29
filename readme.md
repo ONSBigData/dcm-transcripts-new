@@ -27,7 +27,16 @@ implemented pipeline is "ina-dummy-aws", meaning
 - dummy diarization (diarizing only based on sex information from INA)
 - AWS transcribing
 
-The file `ina_dummy_aws.py` can then be simply run (given correct setup
+The file `ina_dummy_aws.py` can then be simply run (modifying the bit
+of code at the end, which determines which audio and how much of it will
+be transcribed). In the process of running the code:
+- a new folder in `../data/pipelines` would be created, initially with the
+raw recording audio file (`raw.mp3`)
+- subsequently, audio segments would appear after the segmentation stage,
+diarization info would be added, transcription and eventually a `final.json`
+file would be created, containing all the information from the process.
+
+The `raw.mp3` and `final.json` are then inputs for TraVis app.
 
 ## Installation
 
@@ -115,6 +124,9 @@ Using React makes for a nice file structure that easily corresponds to the
 visuals on the [webpage](https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/index.html)
 
 It is recommended to use VS code to develop this app.
+
+The `raw.mp3` and `final.json` (the JSON file made using TraGen
+from the `raw.mp3`) are the inputs for TraVis app.
 
 
 ## Installation & run
