@@ -6,7 +6,6 @@ import {getUrlParameter} from "../helpers/helper.js"
 export default function Audio({
     audioUrl
 }) {
-    // let url = getUrlParameter('audio-url', 'input/raw.mp3');
     const { audioStatus, stopPlaying, updatePos } = useAudioStatus();
 
     const handlePlaying = (pos) => {
