@@ -1,3 +1,7 @@
+"""
+Evaluates the success of transcription engine on an ICSI audio file.
+"""
+
 import json
 import os
 from support import editdist
@@ -49,11 +53,10 @@ def compare_full_text(original_transcript, auto_transcript):
             if seg["words"]:
                 for word in seg["words"]:
                     if word["others"]["type"] == "pronunciation":
-                        blob += f" {word['word']}"
+                        blob += f" {word['word'].replace('_', '').replace('OK', 'okay')}"
                     elif word["others"]["type"] == "punctuation":
                         blob += f"{word['word']}"
                 blob = blob.strip()
-                blob += " \n"
 
         return blob.strip()
 
@@ -75,11 +78,8 @@ def compare_full_text(original_transcript, auto_transcript):
     return distance
 
 
-def compare_diarization(original_transcript, auto_transcript):
-    pass #TODO: Implement diarization evaluation
-
-
 def load_transcripts():
+    # JSON is trimmed to correspond to trimming in ina_dummy_aws.py
     with open(f"{ORIGINAL_DIR}/Bdb001_trimmed.json", "r") as read_file:
         original_transcript = json.load(read_file)
 
