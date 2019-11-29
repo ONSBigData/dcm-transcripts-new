@@ -1,6 +1,14 @@
-## Usage
+# Overview
 
-- [TraVis tool](https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/)
+This repo contains code for two main parts:
+- **TraGen** - the part of the solution focused on generating transcript from an audio recording of interview/focus group. 
+  - essentially everything except for `travis` folder is falling under TraGen
+- **TraVis** - the part of the solution focused on visualising the output of TraGen (the transcript).
+  - all of TraVis is in `travis` foldern
+  - TraVis is a web app, written in JavaScript, using React, CSS, HTML ... (no Python)
+  - TraVis is hosted on GitHub pages for this repo - https://onsbigdata.github.io/dcm-transcripts-new/travis/dist/index.html 
+
+# TraGen
 
 ## Installation
 
@@ -77,3 +85,8 @@ Then unzip and move the recordings folder to the `data` folder. I.e.:
     * the python API for GCP speech2text
     * currently, I use a test tier on GCP where I put my own debit card
     which has a free credit for a year.
+    
+# TraVis
+
+## Installation
+
