@@ -1,3 +1,7 @@
+"""
+This code is unused in the rest of the project
+"""
+
 import io
 import os
 

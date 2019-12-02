@@ -1,11 +1,11 @@
+"""
+Code for transcribing audio with AWS
+"""
+
 import boto3
-from botocore.exceptions import ClientError
-import logging
-import time
 from common import *
 import json
 import requests
-import pprint
 
 BUCKET = 'dcm-automatic-transcription'
 AWS_TRANSCRIPTS_DIR = from_data_root(

@@ -1,3 +1,10 @@
+"""
+Implementation of transcribing pipeline made of:
+- INA segmenting
+- Dummy diarization (using only Sex info from INA segmenting)
+- AWS transcription
+"""
+
 from pipelines.pipeline import Pipeline
 import json
 import diarization.dummy_diarization as dummy_dia
@@ -8,7 +15,8 @@ import multiprocessing as mp
 import traceback
 
 # ---------------------------------------------------------------------
-# --- Functions that need to be top-level due to being used in parallelization
+# --- Functions that need to be top-level due to being used in multiprocessing
+# module - i.e. they are executed in parallel
 # ---------------------------------------------------------------------
 
 

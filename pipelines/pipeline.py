@@ -1,3 +1,11 @@
+"""
+Base class for transcribing pipeline. The idea is that this is inherited from
+to make concrete implementations of a pipeline, glueing together concrete
+implementations of Segmentation, Diarization and Transcription steps.
+
+Pipeline has a run_id and a folder where it stores all intermediary results.
+"""
+
 from common import *
 import shutil
 import json

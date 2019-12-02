@@ -1,3 +1,7 @@
+"""
+Implementation of edit distance. As googled and found on Stack overflow :-)
+"""
+
 def levenshtein(s1, s2):
     if len(s1) < len(s2):
         return levenshtein(s2, s1)
