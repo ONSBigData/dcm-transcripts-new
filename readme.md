@@ -137,6 +137,7 @@ from the `raw.mp3`) are the inputs for TraVis app.
 
 The dependencies are managed via NPM. Thus going into the `travis` dir, one should:
 - install the packages with `npm install`
+- run `npm run build` to re-build the `dist` folder
 - run with `bash run-dev.sh` and access the app in the browser
 
 The solution uses Webpack to build the final `bundle.js`, compile SCSS

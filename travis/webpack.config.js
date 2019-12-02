@@ -40,6 +40,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/index.html', to: 'index.html' },
       { from: './src/pics', to: 'pics' },
+      { from: './src/input', to: 'input' },
     ]),
   ],
   watch: true,
